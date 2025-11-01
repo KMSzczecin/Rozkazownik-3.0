@@ -385,11 +385,6 @@ function makeItWork() {
             customAlert("Podaj wszystkie wymagane informacje w działce 21.10!", "error");
             return 0;
         }
-
-        if (x5 == "" && x6 == "" && x7 == "") {
-            customAlert ("Podaj nazwę choć jednego sygnalizatora w działce 21.10!", "error");
-            return 0;
-        }
     }
 
     // 21.15
@@ -418,11 +413,6 @@ function makeItWork() {
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "") {
             customAlert("Podaj wszystkie wymagane informacje w działce 21.15!", "error");
-            return 0;
-        }
-
-        if (x4 == "" && x5 == "" && x6 == "") {
-            customAlert ("Podaj nazwę choć jednego sygnalizatora w działce 21.15!", "error");
             return 0;
         }
     }
