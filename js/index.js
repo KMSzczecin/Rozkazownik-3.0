@@ -228,7 +228,7 @@ function savePNG() {
             });
 
             clonedDoc.querySelectorAll('textarea').forEach(textarea => {
-                textarea.style.height = '346px'; // ustawia normalną wysokość linii
+                textarea.style.height = '343px'; // ustawia normalną wysokość linii
             });       
         }
     }).then(canvas => {
