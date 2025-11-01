@@ -1,0 +1,4 @@
+<b>Changelog - Rozkazownik 3.0</b><br>
+<br>
+<b>v. 1.0</b> - 01.11.2025<br>
+- wydanie aplikacji w wersji testowej

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/generator.css">
+</head>
+<body>
+    <!-- Lewa tabela -->
+    <div class="lewatabela">
+        <table>
+            <thead>
+                <!-- Rozkaz pisemny -->
+                <tr class="naglowek">
+                    <td colspan="4">Rozkaz pisemny</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Nagłówek rozkazu -->
+                <tr class="naglowekRozkazu">
+                    <!-- Numer pociągu -->
+                    <td class="nrPociagu" colspan="2">
+                        <input type="text" id="nrPoc" placeholder="88521">
+                        <br>
+                        A Nr pociągu | składu manewrowego
+                    </td>
+                    <!-- Data -->
+                    <td class="data" colspan="2">
+                        <input type="text" id="data" placeholder="30.10.2025">
+                        <br>
+                        B Data
+                        <button id="buttonData" onclick="getCurrentDate()"><span>📅 Pobierz aktualną datę</span></button>
+                    </td>
+                </tr>
+                <tr class="naglowekRozkazu">
+                    <!-- Lokalizacja -->
+                    <td class="lokalizacja" colspan="2">
+                        <input type="text" id="lokalizacja" placeholder="szlak Kruszki - Dobrzyniec">
+                        <br>
+                        C Lokalizacja pociągu | składu manewrowego
+                    </td>
+                    <!-- Lokalizacja nadawcy -->
+                    <td class="stacja" colspan="2">
+                        <input type="text" id="stacja" placeholder="Dobrzyniec">
+                        <br>
+                        D Lokalizacja nadawcy
+                    </td>
+                </tr>
+                <!-- ================= -->
+                <!-- Konkretne działki -->
+                <!-- ================= -->
+
+                <!-- 22.00 i 99 -->
+                <tr class="row2200_99">
+                    <td class="check">
+                        <input type="checkbox" id="check2200">
+                        <label for="check2200">22.00</label>
+                    </td>
+                    <td class="opis2200">
+                        <b>Dotyczy jazdy torem lewym</b>
+                    </td>
+                    <td class="check99">
+                        <input type="checkbox" id="check99">
+                        <label for="check99">99</label>
+                    </td>
+                    <td class="opis99">
+                        <b>Odwołanie rozkazu pisemnego</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox99_x1">
+                            <label for="textbox99_x1">x.1 identyfikator rozkazu pisemnego</label>
+                        </span>  
+                    </td>
+                </tr>
+
+                <!-- 21.10 -->
+                <tr class="row2110">
+                    <td class="check">
+                        <input type="checkbox" id="check2110">
+                        <label for="check2110">21.10</label>
+                    </td>
+                    <td class="opis3000" colspan="3">
+                        <b>Zezwalam na wyjazd</b> z toru nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x1">
+                            <label for="textbox2110_x1">x.1 tor</label>
+                        </span>    
+                        z
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x2">
+                            <label for="textbox2110_x2">x.2 posterunek</label>
+                        </span> 
+                        <br>
+                        na tor nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x3">
+                            <label for="textbox2110_x3">x.3 tor</label>
+                        </span>
+                        w kierunku
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x4">
+                            <label for="textbox2110_x4">x.4 posterunek</label>
+                        </span>
+                        <br>
+                        Pominięcie sygnałów stój
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x5">
+                            <label for="textbox2110_x5">x.5 sygnalizator</label>
+                        </span>
+                        i
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x6">
+                            <label for="textbox2110_x6">x.6 sygnalizator</label>
+                        </span>
+                        i
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x7">
+                            <label for="textbox2110_x7">x.7 sygnalizator</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.15 -->
+                <tr class="row2115">
+                    <td class="check">
+                        <input type="checkbox" id="check2115">
+                        <label for="check2115">21.15</label>
+                    </td>
+                    <td class="opis2115" colspan="3">
+                        <b>Zezwalam na wjazd</b> z toru nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x1">
+                            <label for="textbox2115_x1">x.1 tor</label>
+                        </span>    
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x2">
+                            <label for="textbox2115_x2">x.2 posterunek</label>
+                        </span> 
+                        na tor nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x3">
+                            <label for="textbox2115_x3">x.3 tor</label>
+                        </span>
+                        <br>
+                        Pominięcie sygnałów
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x4">
+                            <label for="textbox2115_x4">x.4 sygnalizator</label>
+                        </span>
+                        i
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x5">
+                            <label for="textbox2115_x5">x.5 sygnalizator</label>
+                        </span>
+                        i
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x6">
+                            <label for="textbox2115_x6">x.6 sygnalizator</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.20 -->
+                <tr class="row2120">
+                    <td class="check">
+                        <input type="checkbox" id="check2120">
+                        <label for="check2120">21.20</label>
+                    </td>
+                    <td class="opis2120" colspan="3">
+                        Od
+                        <span class="textbox">
+                            <input type="text" id="textbox2120_x1">
+                            <label for="textbox2120_x1">x.1 posterunek</label>
+                        </span>    
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2120_x2">
+                            <label for="textbox2120_x2">x.2 posterunek</label>
+                        </span> 
+                        po torze
+                        <span class="textbox">
+                            <input type="text" id="textbox2120_x3">
+                            <label for="textbox2120_x3">x.3 nr toru</label>
+                        </span>
+                        <br>
+                        <u><b>wskazania semaforów SBL są nieważne.</b>
+                        <br>
+                        Zachować ostrożnosć od semafora ze wskaźnikiem <b>W18.</b></u>
+                    </td>
+                </tr>
+
+                <!-- 21.25 -->
+                <tr class="row2125">
+                    <td class="check">
+                        <input type="checkbox" id="check2125">
+                        <label for="check2125">21.25</label>
+                    </td>
+                    <td class="opis2125" colspan="3">
+                        Zezwalam przejechać za (wskaźnik W5/ostatni rozjazd) w kierunku
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x1">
+                            <label for="textbox2125_x1">x.1 posterunek</label>
+                        </span>
+                        <br>
+                        torem
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x2">
+                            <label for="textbox2125_x2">x.2 tor</label>
+                        </span>
+                        do km
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x3">
+                            <label for="textbox2125_x3">x.3 km</label>
+                        </span>
+                        do godz.
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x4">
+                            <label for="textbox2125_x4">x.4 godzina</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.35 -->
+                <tr class="row2135">
+                    <td class="check">
+                        <input type="checkbox" id="check2135">
+                        <label for="check2135">21.35</label>
+                    </td>
+                    <td class="opis2135" colspan="3">
+                        <b>Zezwalam na kontynuacje jazdy</b> po torze nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2135_x1">
+                            <label for="textbox2135_x1">x.1 tor</label>
+                        </span>
+                        w kierunku
+                        <span class="textbox">
+                            <input type="text" id="textbox2135_x2">
+                            <label for="textbox2135_x2">x.2 posterunek</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.40 -->
+                <tr class="row2140">
+                    <td class="check">
+                        <input type="checkbox" id="check2140">
+                        <label for="check2140">21.40</label>
+                    </td>
+                    <td class="opis2140" colspan="3">
+                        <b>Zatrzymanie pociągu</b> na posterunku/szlaku
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x1">
+                            <label for="textbox2140_x1">x.1 posterunek</label>
+                        </span>
+                        |
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x2">
+                            <label for="textbox2140_x2">x.2 posterunek</label>
+                        </span>
+                        <br>
+                        w km
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x3">
+                            <label for="textbox2140_x3">x.3 km</label>
+                        </span>
+                        celem
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x96">
+                            <label for="textbox2140_x96">x.96 inne</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.45 -->
+                <tr class="row2145">
+                    <td class="check">
+                        <input type="checkbox" id="check2145">
+                        <label for="check2145">21.45</label>
+                    </td>
+                    <td class="opis2145" colspan="3">
+                        Na
+                        <span class="textbox">
+                            <input type="text" id="textbox2145_x1">
+                            <label for="textbox2145_x1">x.1 posterunek</label>
+                        </span>
+                        na sygnalizatorze
+                        <span class="textbox">
+                            <input type="text" id="textbox2145_x2">
+                            <label for="textbox2145_x2">x.2 sygnalizator</label>
+                        </span>
+                        <br>
+                        <b>sygnał zezwalający jest nieważny, zatrzymać pociąg przed tym sygnalizatorem.</b>
+                    </td>
+
+                <!-- 21.50 -->
+                <tr class="row2150">
+                    <td class="check">
+                        <input type="checkbox" id="check2150">
+                        <label for="check2150">21.50</label>
+                    </td>
+                    <td class="opis2150" colspan="3">
+                        <b>Wskazania tarcz ostrzegawczych</b> przejazdowych na posterunku/szlaku
+                        <br>
+                        <span class="textbox">
+                            <input type="text" id="textbox2150_x1">
+                            <label for="textbox2150_x1">x.1 posterunek</label>
+                        </span>
+                        /
+                        <span class="textbox">
+                            <input type="text" id="textbox2150_x2">
+                            <label for="textbox2150_x2">x.2 posterunek</label>
+                        </span>
+                        odnoszących się do przejazdu w km
+                        <span class="textbox">
+                            <input type="text" id="textbox2150_x3">
+                            <label for="textbox2150_x3">x.3 km</label>
+                        </span>
+                        <br>
+                        <b>są nieważne. Jazda z prędkością rozkładową.</b>
+                    </td>
+                </tr>
+
+                <!-- 21.55 -->
+                <tr class="row2155">
+                    <td class="check">
+                        <input type="checkbox" id="check2155">
+                        <label for="check2155">21.55</label>
+                    </td>
+                    <td class="opis2155" colspan="3">
+                        <b>Uszkodzone urządzenia SHP</b> na posterunku/szlaku
+                        <br>
+                        <span class="textbox">
+                            <input type="text" id="textbox2155_x1">
+                            <label for="textbox2155_x1">x.1 posterunek</label>
+                        </span>
+                        |
+                        <span class="textbox">
+                            <input type="text" id="textbox2155_x2">
+                            <label for="textbox2155_x2">x.2 posterunek</label>
+                        </span>
+                        odnoszące się do sygnalizatora
+                        <span class="textbox">
+                            <input type="text" id="textbox2155_x3">
+                            <label for="textbox2155_x3">x.3 sygnalizator</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.60 -->
+                <tr class="row2160">
+                    <td class="check">
+                        <input type="checkbox" id="check2160">
+                        <label for="check2160">21.60</label>
+                    </td>
+                    <td class="opis2160" colspan="3">
+                        <b>Zmiana trasy</b> na odcinku od
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x1">
+                            <label for="textbox2160_x1">x.1 posterunek</label>
+                        </span>
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x2">
+                            <label for="textbox2160_x2">x.2 posterunek</label>
+                        </span>
+                        <br>
+                        jazda przez
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x3">
+                            <label for="textbox2160_x3">x.3 posterunek</label>
+                        </span>
+                        linią
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x4">
+                            <label for="textbox2160_x4">x.4 linia</label>
+                        </span>
+                        z prędkością
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x5">
+                            <label for="textbox2160_x5">x.5 km/h</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.65 -->
+                <tr class="row2165">
+                    <td class="check">
+                        <input type="checkbox" id="check2165">
+                        <label for="check2165">21.65</label>
+                    </td>
+                    <td class="opis2165" colspan="3">
+                        <b>Jazda z opuszczonymi pantografami</b> na odcinku od
+                        <span class="textbox">
+                            <input type="text" id="textbox2165_x1">
+                            <label for="textbox2165_x1">x.1 km</label>
+                        </span>
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2165_x2">
+                            <label for="textbox2165_x2">x.2 km</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.70 -->
+                <tr class="row2170">
+                    <td class="check">
+                        <input type="checkbox" id="check2170">
+                        <label for="check2170">21.70</label>
+                    </td>
+                    <td class="opis2170" colspan="3">
+                        <b>Na odcinku</b> od
+                        <span class="textbox">
+                            <input type="text" id="textbox2170_x1">
+                            <label for="textbox2170_x1">x.1 posterunek</label>
+                        </span>
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2170_x2">
+                            <label for="textbox2170_x2">x.2 posterunek</label>
+                        </span>
+                        linii nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2170_x3">
+                            <label for="textbox2170_x3">x.3 linia</label>
+                        </span>
+                        <br>
+                        <b>jazda pociągu z łącznością analogową.</b>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Prawa tabela -->
+    <div class="prawatabela">
+        <table>
+            <tbody>
+                <!-- 21.80 -->
+                <tr class="row2180">
+                    <td class="check">
+                        <input type="checkbox" id="check2180">
+                        <label for="check2180">21.80</label>
+                    </td>
+                    <td class="opis2180" colspan="3">
+                        <b>Polecam jazdę po torze zamkniętym</b> nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x1">
+                            <label for="textbox2180_x1">x.1 tor</label>
+                        </span>
+                        w kierunku
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x2">
+                            <label for="textbox2180_x2">x.2 posterunek</label>
+                        </span>
+                        <br>
+                        do km
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x3">
+                            <label for="textbox2180_x3">x.3 km</label>
+                        </span>
+                        zjazd do
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x4">
+                            <label for="textbox2180_x4">x.4 posterunek</label>
+                        </span>
+                        do godz
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x5">
+                            <label for="textbox2180_x5">x.5 godzina</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.81 -->
+                <tr class="row2181">
+                    <td class="check">
+                        <input type="checkbox" id="check2181">
+                        <label for="check2181">21.81</label>
+                    </td>
+                    <td class="opis2181" colspan="3">
+                        <b>Tor zamknięty wolny od taboru.</b>
+                    </td>
+                </tr>
+
+                <!-- 21.82 -->
+                <tr class="row2182">
+                    <td class="check">
+                        <input type="checkbox" id="check2182">
+                        <label for="check2182">21.82</label>
+                    </td>
+                    <td class="opis2182" colspan="3">
+                        <b>Na torze pracuje pociąg</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2182_x1">
+                            <label for="textbox2182_x1">x.1 numer pociągu</label>
+                        </span>
+                        w km
+                        <span class="textbox">
+                            <input type="text" id="textbox2182_x2">
+                            <label for="textbox2182_x2">x.2 km</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.83 -->
+                <tr class="row2183">
+                    <td class="check">
+                        <input type="checkbox" id="check2183">
+                        <label for="check2183">21.83</label>
+                    </td>
+                    <td class="opis2183" colspan="3">
+                        <b>Na tor zostanie wyprawiony pociąg</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2183_x1">
+                            <label for="textbox2183_x1">x.1 numer pociągu</label>
+                        </span>
+                        do km
+                        <span class="textbox">
+                            <input type="text" id="textbox2183_x2">
+                            <label for="textbox2183_x2">x.2 km</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.85 -->
+                <tr class="row2185">
+                    <td class="check">
+                        <input type="checkbox" id="check2185">
+                        <label for="check2185">21.85</label>
+                    </td>
+                    <td class="opis2185" colspan="3">
+                        <b>Zezwalam na wstawienie PSD</b> na tor nr
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x1">
+                            <label for="textbox2185_x1">x.1 tor</label>
+                        </span>
+                        w km
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x2">
+                            <label for="textbox2185_x2">x.2 km</label>
+                        </span>
+                        <br>
+                        na szlaku |
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x3">
+                            <label for="textbox2185_x3">x.3 posterunek</label>
+                        </span>
+                        |
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x4">
+                            <label for="textbox2185_x4">x.4 posterunek</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 23.10 -->
+                <tr class="row2310">
+                    <td class="check">
+                        <input type="checkbox" id="check2310">
+                        <label for="check2310">23.10</label>
+                    </td>
+                    <td class="opis2310" colspan="3">
+                        <b>Nie przekraczać prędkości i zachować ostrożność:</b>
+                        <br>
+                        <br>
+                        <b>1. Na posterunku/szlaku</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x1">
+                            <label for="textbox2310_x1">x.1 posterunek</label>
+                        </span>
+                        <b>/</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x2">
+                            <label for="textbox2310_x2">x.2 posterunek</label>
+                        </span>
+                        <b>tor nr</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x3">
+                            <label for="textbox2310_x3">x.3 tor</label>
+                        </span>
+                        <br>
+                        V
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x4">
+                            <label for="textbox2310_x4">x.4 km/h</label>
+                        </span>
+                        od
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x5">
+                            <label for="textbox2310_x5">x.5 km</label>
+                        </span>
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x6">
+                            <label for="textbox2310_x6">x.6 km</label>
+                        </span>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x95">
+                            <label for="textbox2310_x95">x.95 przyczyna</label>
+                        </span>
+                        <br>
+                        <b>2. Na posterunku/szlaku</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x7">
+                            <label for="textbox2310_x7">x.7 posterunek</label>
+                        </span>
+                        <b>/</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x8">
+                            <label for="textbox2310_x8">x.8 posterunek</label>
+                        </span>
+                        <b>tor nr</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x9">
+                            <label for="textbox2310_x9">x.9 tor</label>
+                        </span>
+                        <br>
+                        V
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x10">
+                            <label for="textbox2310_x10">x.10 km/h</label>
+                        </span>
+                        od
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x11">
+                            <label for="textbox2310_x11">x.11 km</label>
+                        </span>
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x12">
+                            <label for="textbox2310_x12">x.12 km</label>
+                        </span>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x96">
+                            <label for="textbox2310_x96">x.96 przyczyna</label>
+                        </span>
+                        <br>
+                        <b>3. Na posterunku/szlaku</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x13">
+                            <label for="textbox2310_x13">x.13 posterunek</label>
+                        </span>
+                        <b>/</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x14">
+                            <label for="textbox2310_x14">x.14 posterunek</label>
+                        </span>
+                        <b>tor nr</b>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x15">
+                            <label for="textbox2310_x15">x.15 tor</label>
+                        </span>
+                        <br>
+                        V
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x16">
+                            <label for="textbox2310_x16">x.16 km/h</label>
+                        </span>
+                        od
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x17">
+                            <label for="textbox2310_x17">x.17 km</label>
+                        </span>
+                        do
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x18">
+                            <label for="textbox2310_x18">x.18 km</label>
+                        </span>
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x97">
+                            <label for="textbox2310_x97">x.97 przyczyna</label>
+                        </span>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+
+                <!-- 23.11 -->
+                <tr class="row2311">
+                    <td class="check">
+                        <input type="checkbox" id="check2311">
+                        <label for="check2311">23.11</label>
+                    </td>
+                    <td class="opis2311" colspan="3">
+                        <b>Podawać sygnał „Baczność”</b>
+                    </td>
+                </tr>
+
+                <!-- 23.20 -->
+                <tr class="row2320">
+                    <td class="check">
+                        <input type="checkbox" id="check2320">
+                        <label for="check2320">23.20</label>
+                    </td>
+                    <td class="opis2320" colspan="3">
+                        <span class="textbox">
+                            <textarea id="textbox2320_x96"></textarea>
+                            <label for="textbox2320_x96">x.96 inne</label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- Stopka rozkazu -->
+                <tr class="stopkaRozkazu">
+                    <!-- Numer pociągu -->
+                    <td class="duzyTekst" colspan="2">
+                        <input type="text" id="idMaszynisty" placeholder="Groszytrzysta">
+                        <br>
+                        <b>V</b> Identyfikator maszynisty
+                    </td>
+                    <!-- Data -->
+                    <td class="date" colspan="2">
+                        <input type="text" id="idDyzurnego" placeholder="KMSzczecin">
+                        <br>
+                        <b>W</b> Identyfikator nadawcy
+                    </td>
+                </tr>
+                <tr class="stopkaRozkazu">
+                    <!-- Lokalizacja -->
+                    <td class="lokalizacja" colspan="2">
+                        <input type="text" id="godzina" placeholder="12:45">
+                        <br>
+                        <b>Y</b> Godzina
+                        <button id="buttonGodzina" onclick="getCurrentTime()"><span>⏰ Pobierz akt. godzinę</span></button>
+                    </td>
+                    <!-- Lokalizacja nadawcy -->
+                    <td class="stacja" colspan="2">
+                        <input type="text" id="idRozkazu" placeholder="RD1234567890">
+                        <br>
+                        <b>Z</b> Identyfikator rozkazu pisemnego
+                        <button id="buttonIDRozkazu" onclick="generateRozkazID()"><span>🎲 Generuj losowy numer</span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/generator.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <title>Rozkazownik 3.0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="media/img/favicon.png">
+</head>
+<body>
+    <!-- Paskologocoś -->
+    <div class="topbar">
+        <a href="index.html" title="Strona główna"><img src="media/img/baner.png" id="baner"></a>
+        <div id="toolbar">
+            <div class="toolbarButton" id="languageChange" title="Zmień język">
+                <div class="buttonContent">
+                    <img src="media/flags/pl.png">
+                    <p>▼</p>
+                </div>
+                <div class="languageSelector">
+                    <div class="languageOption" id="langPL" title="Polski" onclick="languageChange(`pl`);">
+                        <img src="media/flags/pl.png">
+                    </div>
+                    <!-- <div class="languageOption" id="langEN" title="English" onclick="languageChange(`en`);>
+                        <img src="media/flags/en.png">
+                    </div> -->
+                </div>
+            </div>
+            <a href="oldReleases.html"><div class="toolbarButton" title="Rozkazownik 2.0" id="oldVersion">
+                <img src="media/img/oldRozkazownik.png">
+            </div></a>
+            <div class="toolbarButton" id="refreshButton" title="Odśwież stronę z rozkazem" onclick="window.location.reload();">
+                <img src="media/img/refresh.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Okno z rozkazem z drugiego htmla -->
+    <div class="oknoGeneratora" id="oknoGeneratora">
+        <iframe src="rozkaz.html" class="iframeRozkaz" id="iframeRozkaz"></iframe>
+    </div>
+
+    <!-- Przyciski pod oknem z rozkazem -->
+    <div id="przyciski">
+        <button type="button" id="przyciskRozwijacza" onclick="higherIframe()">↕️ Rozwiń okno generatora do pełnego rozmiaru ↔️</button>
+        <button type="button" id="przyciskGenerowania" onclick="makeItWork()">📄 <b>Wygeneruj rozkaz!</b> 📄</button>
+    </div>
+
+    <!-- Wygenerowany wynik-->
+    <div class="divWynikowy" id="divWynikowy"></div>
+
+    <!-- Stopka -->
+    <div class="footer" id="footer">
+        <p>❓ Potrzebujesz pomocy w wypełnieniu rozkazu? <a href="https://pitkowakolej.pl/rozkaz-pisemny-pl/" target="_blank">Zerknij tutaj!</a> Ewentualnie możesz zapisać się na <a href=https://td2.info.pl/dzial-trenerski/trenerska-pomoc-dla-poczatkujacych/ target="_blank">szkolenie do trenerów</a>!</p>
+        <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2025</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.0</a></p>
+    </div>
+
+    <!-- Alerty -->
+    <div id="overlay">
+        <div id="overlayWindow">
+            <div id="overlayMsg" style="margin-bottom: 20px; font-weight: 500;"></div>
+            <button id="overlayButton">OK</button>
+        </div>
+    </div>
+
+    <!-- Ładowanie skryptów -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        function updateBodyPadding() {
+            const footer = document.getElementById('footer');
+            if (!footer) return;
+            const footerHeight = footer.offsetHeight;
+            document.body.style.paddingBottom = footerHeight + 'px';
+        }
+
+        // Aktualizacja po załadowaniu strony i przy każdej zmianie rozmiaru okna
+        window.addEventListener('load', updateBodyPadding);
+        window.addEventListener('resize', updateBodyPadding);
+    </script>
+</body>
+</html>

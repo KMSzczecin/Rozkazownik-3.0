@@ -1,0 +1,387 @@
+/* ========================================================== */
+/* generator.css - style dla tabeli z rozkazem dla generatora */
+/* ========================================================== */
+
+:root, html {
+    color-scheme: dark; /* mówimy przeglądarce, że strona jest ciemna */
+    forced-color-adjust: none; /* zapobiega wymuszaniu kolorów w high-contrast */
+    margin: 0 10px 0;
+}
+
+body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 10px auto 24px;
+    width: 1560px;
+    height: 1046px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* ========================= */
+/* ogólne właściwości tabeli */
+/* ========================= */
+
+/* tabela */
+table {
+    display: table;
+    border-collapse: collapse;
+    width: 760px;
+    margin: 0;
+}
+
+td {
+    padding: 5px;
+    border: 1px solid #000000;  /* obramowanie komórek */
+    width: 190px;
+
+}
+
+tr.naglowekRozkazu td, tr.stopkaRozkazu td {
+    width: 369px;
+}
+
+td.check {
+    width: 69px;
+    vertical-align: top;
+}
+
+/* checkboxy */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    background-color: #FFC907;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    margin-left: 1.5em;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✘';
+    font-weight: bold;
+    position: absolute;
+    top: -0.6em;
+    left: -0.2em;
+    font-size: 24px;
+    color: #0000ff;
+}
+
+td.check label, td.check99 label {
+    display: block;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+/* pola tekstowe nagłówka i stopki */
+.naglowekRozkazu td, .stopkaRozkazu td {
+    padding-left: 2%;
+    font-size: 12px;
+}
+
+.naglowekRozkazu input, .stopkaRozkazu input {
+    background-color: #ffffff;
+    color: #0000ff;
+    width: 75%;
+    font-weight: bold;
+    border: none;                  
+    border-bottom: 2px dotted #000;
+    outline: none;
+    margin-left: 3%;
+    margin-bottom: 2px;
+    font-size: 16px;
+}
+
+.naglowekRozkazu input::placeholder, .stopkaRozkazu input::placeholder {
+    font-weight: normal;
+    color: #555555;
+    font-size: 14px;
+}
+
+.naglowekRozkazu input:hover, .stopkaRozkazu input:hover {
+    background-color: #ffff00;
+}
+
+/* pola tekstowe komórek tabeli */
+.textbox {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: top;
+    margin: 0;
+}
+
+.textbox input[type="text"] {
+    background-color: #ffffff;
+    color: #0000ff;
+    font-weight: bold;
+    height: 0.75em;
+    width: 9em;
+    border: none;                  
+    border-bottom: 2px dotted #000;
+    outline: none;
+    font-size: 16px;
+}
+
+.textbox input[type="text"]:hover {
+    background-color: #ffff00;
+}
+
+.textbox label {
+    margin-top: 3px;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+div.lewatabela {
+    position: relative;
+}
+
+div.prawatabela {
+    position: relative;
+}
+
+div.lewatabela table {
+    margin-right: 10px;
+}
+
+div.prawatabela table {
+    margin-left: 10px;
+}
+
+.textbox input[readonly]:hover {
+    background-color: #ff0000;
+    color: #555;
+    cursor: not-allowed;
+}
+
+/* przyciski */
+
+button {
+    width: 150px;
+    position: absolute;
+    left: 600px;
+    border: 1px solid #000000;
+    padding: 0;
+    height: 18px;
+    background-color: #bbbbbb;
+    color: #000000;
+    font-size: 12px;
+}
+
+button#buttonGodzina {
+    left: 230px;
+}
+
+button#buttonIDRozkazu {
+    left: 610px;
+}
+
+button:hover {
+    background-color: #666666;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+button span {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+}
+
+/* ================================================== */
+/* właściwości pojedynczych komórek */
+/* ================================================== */
+
+/* nagłówek */
+tr.naglowek td {
+    font-weight: bold;
+}
+
+/* 22.00 i 99 */
+td.opis2200 {
+    width: 288px;
+    vertical-align: top;
+}
+
+td.check99 {
+    width: 43px;
+    vertical-align: top;
+}
+
+td.opis99 {
+    width: 314px;
+    vertical-align: top;
+}
+
+td input#textbox99_x1 {
+    width: 14em;
+}
+
+/* 21.10 */
+td input#textbox2110_x1, td input#textbox2110_x3 {
+    width: 4em;
+}
+
+/* 21.15 */
+td input#textbox2115_x1, td input#textbox2115_x3 {
+    width: 4em;
+}
+
+/* 21.20 */
+td input#textbox2120_x1, td input#textbox2120_x2 {
+    width: 14em;
+}
+
+td input#textbox2120_x3 {
+    width: 5em;
+}
+
+/* 21.25 */
+td input#textbox2125_x1 {
+    width: 11em;
+}
+
+td input#textbox2125_x2, td input#textbox2125_x3, td input#textbox2125_x4 {
+    width: 5em;
+}
+
+/* 21.35 */
+td input#textbox2135_x1 {
+    width: 5em;
+}
+
+/* 21.40 */
+td input#textbox2140_x1, td input#textbox2140_x2 {
+    width: 10em;
+}
+
+/* 21.45 */
+td input#textbox2145_x1 {
+    width: 12em;
+}
+
+/* 21.50 */
+td input#textbox2150_x3 {
+    width: 4em;
+}
+
+/* 21.55 */
+td input#textbox2155_x3 {
+    width: 6em;
+}
+
+/* 21.60 */
+td input#textbox2160_x1, td input#textbox2160_x2 {
+    width: 12em;
+}
+
+td input#textbox2160_x4, td input#textbox2160_x5 {
+    width: 5em;
+}
+
+/* 21.65 */
+td input#textbox2165_x1, td input#textbox2165_x2 {
+    width: 7em;
+}
+
+/* 21.70 */
+td input#textbox2170_x3 {
+    width: 4em;
+}
+
+/* szare tło w 21.8x */
+tr[class^="row218"] {
+    background-color: #e8e8e8;
+}
+
+tr[class^="row218"] .textbox input[type="text"]{
+    background-color: #e8e8e8;
+}
+
+tr[class^="row218"] .textbox input[type="text"]:hover {
+    background-color: #ffff00;
+}
+
+/* 21.80 */
+td input#textbox2180_x1, td input#textbox2180_x3, td input#textbox2180_x5 {
+    width: 4em;
+}
+
+td input#textbox2180_x4 {
+    width: 14em;
+}
+
+/* 21.81 */
+
+/* 21.82 */
+td input#textbox2182_x2 {
+    width: 4em;
+}
+
+/* 21.83 */
+td input#textbox2183_x2 {
+    width: 4em;
+}
+
+/* 21.85 */
+td input#textbox2185_x1 {
+    width: 4em;
+}
+
+td input#textbox2185_x2, td input#textbox2185_x3, td input#textbox2185_x4 {
+    width: 7em;
+}
+
+/* 23.10 */
+
+td input#textbox2310_x3, td input#textbox2310_x4, td input#textbox2310_x5,  td input#textbox2310_x6, td input#textbox2310_x9, td input#textbox2310_x10, td input#textbox2310_x11,  td input#textbox2310_x12, td input#textbox2310_x15, td input#textbox2310_x16, td input#textbox2310_x17, td input#textbox2310_x18 {
+    width: 4em;
+}
+
+td input#textbox2310_x95, td input#textbox2310_x96, td input#textbox2310_x97 {
+    width: 21em;
+}
+
+/* 23.11 */
+
+/* 23.20 */
+td textarea#textbox2320_x96 {
+    width: 663px;
+    height: 308px;
+    font-size: 16px;
+    line-height: 2;
+    border: none;
+    resize: none;
+    background-color: #fff;
+    color: #0000ff;
+    font-weight: bold;
+    background-image: radial-gradient(circle, #000000 1.5px, transparent 1.5px);
+    background-size: 4px 32px; /* dopasowane do line-height */
+    background-position: 0 10px;
+    overflow: hidden;
+}
+
+td textarea#textbox2320_x96:hover {
+    background-color: #ffff00;
+}
+
+td textarea#textbox2320_x96[readonly]:hover {
+    background-color: #ff0000;
+    color: #555;
+    cursor: not-allowed;
+}
+
+td textarea#textbox2320_x96:focus {
+    outline: none;
+}
