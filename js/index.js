@@ -377,8 +377,10 @@ function makeItWork() {
         if (x7 !== "") pomijaneSygnaly.push(x7);
 
         if (pomijaneSygnaly.length > 0) {
-            gotowyRozkaz += "</b>\nPominięcie sygnałów stój <b>" + pomijaneSygnaly.join("</b> i <b>") + "</b>\n\n";
+            gotowyRozkaz += "</b>\nPominięcie sygnałów stój <b>" + pomijaneSygnaly.join("</b> i <b>");
         }
+
+        gotowyRozkaz += "</b>\n\n";
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "" || x4 == "") {
@@ -407,8 +409,10 @@ function makeItWork() {
         if (x6 !== "") pomijaneSygnaly.push(x6);
 
         if (pomijaneSygnaly.length > 0) {
-            gotowyRozkaz += "</b>\nPominięcie sygnałów stój <b>" + pomijaneSygnaly.join("</b> i <b>") + "</b>\n\n";
+            gotowyRozkaz += "</b>\nPominięcie sygnałów stój <b>" + pomijaneSygnaly.join("</b> i <b>");
         }
+
+        gotowyRozkaz += "</b>\n\n";
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "") {
