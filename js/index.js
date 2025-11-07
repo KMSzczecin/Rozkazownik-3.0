@@ -907,9 +907,7 @@ let typed = "";
 
 // funkcja pokazująca obrazek
 function showBojek() {
-    const img = document.getElementById("bojekImage");
-    img.style.display = "block";
-    setTimeout(() => img.style.display = "none", 3000);
+    customAlert("<img src='media/img/bojek.png' style='max-height: 75vh; max-width: 360px';>", "changelog");
 }
 
 // sprawdzenie wpisanych znaków
