@@ -92,7 +92,7 @@ body {
 
 .toolbarButton .buttonContent p {
     margin: 0.5vw 0 0;
-    font-size: 1em;
+    font-size: 1.5vh;
 }
 
 /* Menu rozwijane */
@@ -184,6 +184,7 @@ body {
 
 .divWynikowy h2 {
     margin: 0 0 10px;
+    text-align: center;
 }
 
 .divWynikowy hr {
@@ -311,7 +312,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto 5vh;
+    margin: 0 auto 0;
     padding: 1vw;
     width: 88vw;
     border: 5px #ffffff dotted;
@@ -319,11 +320,13 @@ body.modal-open {
 
 #oldReleases h1, h4, h6, p {
     margin: 1vh;
+    text-align: center;
 }
 
 #oldReleases img {
     width: auto;
     max-height: 25vh;
+    max-width: 80vw;
 }
 
 #oldReleases #downloadButton {
@@ -348,5 +351,26 @@ body.modal-open {
     * {
         animation: none !important;
         transition: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .topbar #baner {
+        background-color: #7f00ff;
+    }
+    #przyciski {
+        flex-direction: column;
+        margin: 0 10vw 0;
+    }
+    #przyciski button {
+        width: 80vw;
+    }
+
+    #divWynikowy #przyciski button {
+        width: 80vw;
+    }
+    #oldReleases #downloadButton {
+        width: 80vw;
+        margin: 0;
     }
 }

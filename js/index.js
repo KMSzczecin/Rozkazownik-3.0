@@ -330,13 +330,13 @@ function makeItWork() {
 
     // Sprawdzenie, czy jakakolwiek działka jest zaznaczona
     if (zaznaczoneCheckboxy == "") {
-        customAlert("Nie wypisuje się pustych rozkazów!" + "<br>" + "Zaznacz przynajmniej jedną działkę.", "error");
+        customAlert("Nie wypisuje się pustych rozkazów!" + "<br>" + "Zaznacz przynajmniej jedną instrukcję.", "error");
         return 0;
     }
 
     // 22.00
     if (zaznaczoneCheckboxy == "check2200") {
-        customAlert("Musisz coś jeszcze dodać do tego rozkazu. Sama działka 22.00 nie wystarczy!", "alert");
+        customAlert("Musisz coś jeszcze dodać do tego rozkazu. Sama instrukcja 22.00 nie wystarczy!", "alert");
         return 0;
     }
 
@@ -349,10 +349,16 @@ function makeItWork() {
     if (zaznaczoneCheckboxy.includes("check99")) {
         x1 = generator.getElementById("textbox99_x1").value.trim();
         if (x1 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 99!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 99!", "error");
             return 0;
         }
         gotowyRozkaz += "<b>99</b>\n<b>Odwołanie rozkazu pisemnego</b> " + x1 +"\n\n";
+    }
+
+    // Sprawdzenie, czy użytkownik nie próbuje jednocześnie wypisać 21.10 i 21.15
+    if (zaznaczoneCheckboxy.includes("check2110") && zaznaczoneCheckboxy.includes("check2115") ) {
+        customAlert("Nie możesz wydać rozkazu jednocześnie na wjazd i wyjazd pociągu!" + "<br>" + "Wystaw dwa osobne rozkazy.", "error");
+        return 0;
     }
 
     // 21.10
@@ -384,7 +390,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "" || x4 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.10!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.10!", "error");
             return 0;
         }
     }
@@ -416,7 +422,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.15!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.15!", "error");
             return 0;
         }
     }
@@ -436,7 +442,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.20!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.20!", "error");
             return 0;
         }
     }
@@ -454,7 +460,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "" || x4 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.25!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.25!", "error");
             return 0;
         }
     }
@@ -470,7 +476,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.35!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.35!", "error");
             return 0;
         }
     }
@@ -493,7 +499,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" && x3 == "" || x96 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.40!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.40!", "error");
             return 0;
         }
     }
@@ -509,7 +515,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.45!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.45!", "error");
             return 0;
         }
     }
@@ -532,7 +538,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" && x3 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.50!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.50!", "error");
             return 0;
         }
     }
@@ -554,7 +560,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" && x3 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.55!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.55!", "error");
             return 0;
         }
     }
@@ -573,7 +579,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "" || x4 == "" || x5 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.60!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.60!", "error");
             return 0;
         }
     }
@@ -588,7 +594,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.65!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.65!", "error");
             return 0;
         }
     }
@@ -605,7 +611,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.70!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.70!", "error");
             return 0;
         }
     }
@@ -624,9 +630,15 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" && x3 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.80!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.80!", "error");
             return 0;
         }
+    }
+
+    // Sprawdzenie, czy użytkownik nie próbuje jednocześnie wypisać 21.81 i 21.82
+    if (zaznaczoneCheckboxy.includes("check2181") && zaznaczoneCheckboxy.includes("check2182") ) {
+        customAlert("Tor jest wolny od taboru, ale tabor na nim jest? Wybierz jedną z instrukcji - 21.81 lub 21.82!", "error");
+        return 0;
     }
 
     // 21.81
@@ -645,7 +657,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.82!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.82!", "error");
             return 0;
         }
     }
@@ -660,7 +672,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.83!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.83!", "error");
             return 0;
         }
     }
@@ -678,7 +690,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy nie ma pustych pól
         if (x1 == "" || x2 == "" || x3 == "" || x4 == "") {
-            customAlert("Podaj wszystkie wymagane informacje w działce 21.85!", "error");
+            customAlert("Podaj wszystkie wymagane informacje w instrukcji 21.85!", "error");
             return 0;
         }
     }
@@ -715,7 +727,7 @@ function makeItWork() {
 
         // Sprawdź, czy wszystkie części 1. punktu są uzupełnione
         if (x1 == "" && x2 == "" || x3 == "" || x4 == "" || x5 == "" || x6 == "" || x95 == "") {
-            customAlert("Uzupełnij w pełni pierwsze ostrzeżenie w działce 23.10!", "error");
+            customAlert("Uzupełnij w pełni pierwsze ostrzeżenie w instrukcji 23.10!", "error");
             return 0;
         }
 
@@ -734,7 +746,7 @@ function makeItWork() {
             secondWarningStarted = true;
             // Sprawdź, czy któreś pole jest puste
             if (x7 == "" && x8 == "" || x9 == "" || x10 == "" || x11 == "" || x12 == "" || x96 == "") {
-                customAlert("Uzupełnij w pełni drugie ostrzeżenie w działce 23.10!", "error");
+                customAlert("Uzupełnij w pełni drugie ostrzeżenie w instrukcji 23.10!", "error");
                 return 0;
             }
 
@@ -756,7 +768,7 @@ function makeItWork() {
 
             // Sprawdź, czy któreś pole jest puste
             if (x13 === "" && x14 === "" || x15 === "" || x16 === "" || x17 === "" || x18 === "" || x97 === "") {
-                customAlert("Uzupełnij w pełni trzecie ostrzeżenie w działce 23.10!", "error");
+                customAlert("Uzupełnij w pełni trzecie ostrzeżenie w instrukcji 23.10!", "error");
                 return 0;
             }
 
@@ -772,7 +784,7 @@ function makeItWork() {
     // 23.11
     if (zaznaczoneCheckboxy.includes("check2311")) {
         if (!zaznaczoneCheckboxy.includes("check2310")) {
-            customAlert("Wydaj pierw ostrzeżenia w działce 23.10!", "alert");
+            customAlert("Wydaj pierw ostrzeżenia w instrukcji 23.10!", "alert");
             return 0; 
         }
 
@@ -790,7 +802,7 @@ function makeItWork() {
 
         // Sprawdzenie, czy działka nie jest pusta
         if (x96 == "") {
-            customAlert("Nie wpisałeś nic w działkę 23.20!", "alert");
+            customAlert("Nie wpisałeś nic w instrukcję 23.20!", "alert");
             return 0;
         }
     }
@@ -885,3 +897,65 @@ function openChangelog() {
             alert("Błąd podczas wczytywania changeloga: " + err.message);
         });
 }
+
+// ======================
+// Giga tajny bojuuuuuuuś
+// ======================
+
+const secret = "bojek";
+let typed = "";
+
+// funkcja pokazująca obrazek
+function showBojek() {
+    const img = document.getElementById("bojekImage");
+    img.style.display = "block";
+    setTimeout(() => img.style.display = "none", 3000);
+}
+
+// sprawdzenie wpisanych znaków
+function checkTyped(key) {
+    typed += key.toLowerCase();
+    if (typed.length > secret.length) typed = typed.slice(-secret.length);
+    if (typed === secret) {
+        showBojek();
+        typed = "";
+    }
+}
+
+// --- wpisywanie w rodzicu ---
+document.addEventListener("keydown", e => checkTyped(e.key));
+document.querySelectorAll("input, textarea").forEach(el => {
+    el.addEventListener("input", e => {
+        const value = el.value;
+        const lastChars = value.slice(-secret.length);
+        checkTyped(lastChars);
+    });
+});
+
+// --- komunikaty z iframe ---
+window.addEventListener("message", e => {
+    if (e.data && e.data.type === "showBojek") {
+        showBojek();
+    }
+});
+
+// --- nasłuchiwanie iframe ---
+const iframe = document.getElementById("iframeRozkaz");
+iframe.addEventListener("load", () => {
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    if (!iframeDoc) return;
+
+    // keydown w iframe
+    iframeDoc.addEventListener("keydown", e => {
+        checkTyped(e.key);
+    });
+
+    // input/textarea w iframe
+    iframeDoc.querySelectorAll("input, textarea").forEach(el => {
+        el.addEventListener("input", e => {
+            const value = el.value;
+            const lastChars = value.slice(-secret.length);
+            checkTyped(lastChars);
+        });
+    });
+});

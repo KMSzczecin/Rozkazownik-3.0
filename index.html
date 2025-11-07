@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" type="image/png" href="media/img/favicon.png">
+    <link rel="icon" type="image/png" href="media/img/favicon.ico">
 </head>
 <body>
     <!-- Paskologocoś -->
@@ -49,10 +49,10 @@
         </section>
 
         <!-- Przyciski pod oknem z rozkazem -->
-        <section id="przyciski">
+        <div id="przyciski">
             <button type="button" id="przyciskRozwijacza" onclick="higherIframe()">↕️ Rozwiń okno generatora do pełnego rozmiaru ↔️</button>
             <button type="button" id="przyciskGenerowania" onclick="makeItWork()">📄 <b>Wygeneruj rozkaz!</b> 📄</button>
-        </section>
+        </div>
 
         <!-- Wygenerowany wynik-->
         <section class="divWynikowy" id="divWynikowy"></section>
@@ -87,5 +87,8 @@
         window.addEventListener('load', updateBodyPadding);
         window.addEventListener('resize', updateBodyPadding);
     </script>
+
+    <!-- Bojek -->
+    <img id="bojekImage" src="media/img/bojek.png" alt="Bojek" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:300px; z-index:9999;">
 </body>
 </html>

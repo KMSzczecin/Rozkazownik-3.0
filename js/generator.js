@@ -32,17 +32,17 @@ function getCurrentTime() {
 }
 
 function generateRozkazID() {
-    let IDRozkazu = "RD";
+    let IDRozkazu = "RD-";
 
     // Dodaj numer rozkazu
     let wynikLosowy = Math.floor(Math.random() * 1000);
     const numerRozkazu = String(wynikLosowy).padStart(3, "0"); //dodaj brakujące zera z przodu
-    IDRozkazu += numerRozkazu;
+    IDRozkazu += numerRozkazu + "-";
 
     // Dodaj kod ewidencyjny posterunku wg POS
-    wynikLosowy = Math.floor(Math.random() * 10000);
-    const kodEwidencyjny = String(wynikLosowy).padStart(5, "0"); //dodaj brakujące zera z przodu
-    IDRozkazu += kodEwidencyjny;
+    wynikLosowy = Math.floor(Math.random() * 100000);
+    const kodEwidencyjny = String(wynikLosowy).padStart(6, "0"); //dodaj brakujące zera z przodu
+    IDRozkazu += kodEwidencyjny + "-";
 
     // Dodaj dwie ostatnie cyfry roku
     const today = new Date();
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // alert przy próbie kliknięcia w readonly
         input.addEventListener('click', () => {
             if (input.readOnly) {
-                parent.customAlert("Aby edytować to pole, musisz najpierw zaznaczyć działkę, której ono dotyczy!", "alert");
+                parent.customAlert("Aby edytować to pole, musisz najpierw zaznaczyć instrukcję, której ono dotyczy!", "alert");
             }
         });
     });
