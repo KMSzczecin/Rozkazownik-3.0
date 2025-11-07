@@ -133,6 +133,7 @@ body {
     flex-direction: column;
     margin: 0 auto 0;
     align-items: center;
+    will-change: transform;
 }
 
 .iframeRozkaz {
@@ -156,8 +157,9 @@ body {
     margin: 1vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    height: 4vh;
     max-width: 800px;
+    line-height: 1.2;
+    min-height: 2.5em;
     background-color: #ffffff;
     color: #000000;
 }
@@ -340,4 +342,11 @@ body.modal-open {
     50% { transform: translateX(-4px) rotate(-1deg); }
     60% { transform: translateX(2px) rotate(1deg); }
     70%, 100% { transform: translateX(0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }

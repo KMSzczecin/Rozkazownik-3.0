@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="pl">
 <head>
     <title>Rozkazownik 3.0</title>
     <meta charset="UTF-8">
@@ -9,51 +9,60 @@
 </head>
 <body>
     <!-- Paskologocoś -->
-    <div class="topbar">
-        <a href="index.html" title="Strona główna"><img src="media/img/baner.png" id="baner"></a>
-        <div id="toolbar">
-            <div class="toolbarButton" id="languageChange" title="Zmień język">
+    <header class="topbar">
+        <a href="index.html" title="Strona główna">
+            <picture>
+                <source media="(max-width: 600px)" srcset="media/img/512.png">
+                <img src="media/img/baner.png" id="baner" alt="Rozkazownik 3.0">
+            </picture>
+            
+        </a>
+        <nav id="toolbar">
+            <div class="toolbarButton" id="languageChange" tabindex="0" title="Zmień język" aria-label="Zmień język">
                 <div class="buttonContent">
-                    <img src="media/flags/pl.png">
+                    <img src="media/flags/pl.png" alt="PL">
                     <p>▼</p>
                 </div>
                 <div class="languageSelector">
-                    <div class="languageOption" id="langPL" title="Polski" onclick="languageChange(`pl`);">
-                        <img src="media/flags/pl.png">
+                    <div class="languageOption" id="langPL" title="Polski" aria-label="język polski" onclick="languageChange(`pl`);">
+                        <img src="media/flags/pl.png" alt="PL">
                     </div>
-                    <!-- <div class="languageOption" id="langEN" title="English" onclick="languageChange(`en`);>
+                    <!-- <div class="languageOption" id="langEN" title="English" aria-label="English language" onclick="languageChange(`en`);>
                         <img src="media/flags/en.png">
                     </div> -->
                 </div>
             </div>
-            <a href="oldReleases.html"><div class="toolbarButton" title="Rozkazownik 2.0" id="oldVersion">
-                <img src="media/img/oldRozkazownik.png">
-            </div></a>
-            <div class="toolbarButton" id="refreshButton" title="Odśwież stronę z rozkazem" onclick="window.location.reload();">
-                <img src="media/img/refresh.png">
+            <a href="oldReleases.html" title="Rozkazownik 2.0" aria-label="Rozkazownik 2.0" tabindex="0" class="toolbarButton" id="oldVersion">
+                <img src="media/img/oldRozkazownik.png" alt="v. 2.0">
+            </a>
+            <div class="toolbarButton" id="refreshButton" tabindex="0" title="Odśwież stronę z rozkazem" aria-label="Odśwież stronę z rozkazem" onclick="window.location.reload();">
+                <img src="media/img/refresh.png" alt="<-">
             </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <!-- Okno z rozkazem z drugiego htmla -->
-    <div class="oknoGeneratora" id="oknoGeneratora">
-        <iframe src="rozkaz.html" class="iframeRozkaz" id="iframeRozkaz"></iframe>
-    </div>
+    <!-- Główna zawartość -->
+    <main>
+        <!-- Okno z rozkazem z drugiego htmla -->
+        <section class="oknoGeneratora" id="oknoGeneratora">
+            <iframe src="rozkaz.html" class="iframeRozkaz" id="iframeRozkaz"></iframe>
+        </section>
 
-    <!-- Przyciski pod oknem z rozkazem -->
-    <div id="przyciski">
-        <button type="button" id="przyciskRozwijacza" onclick="higherIframe()">↕️ Rozwiń okno generatora do pełnego rozmiaru ↔️</button>
-        <button type="button" id="przyciskGenerowania" onclick="makeItWork()">📄 <b>Wygeneruj rozkaz!</b> 📄</button>
-    </div>
+        <!-- Przyciski pod oknem z rozkazem -->
+        <section id="przyciski">
+            <button type="button" id="przyciskRozwijacza" onclick="higherIframe()">↕️ Rozwiń okno generatora do pełnego rozmiaru ↔️</button>
+            <button type="button" id="przyciskGenerowania" onclick="makeItWork()">📄 <b>Wygeneruj rozkaz!</b> 📄</button>
+        </section>
 
-    <!-- Wygenerowany wynik-->
-    <div class="divWynikowy" id="divWynikowy"></div>
+        <!-- Wygenerowany wynik-->
+        <section class="divWynikowy" id="divWynikowy"></section>
+    </main>
 
     <!-- Stopka -->
-    <div class="footer" id="footer">
+    <footer class="footer" id="footer">
         <p>❓ Potrzebujesz pomocy w wypełnieniu rozkazu? <a href="https://pitkowakolej.pl/rozkaz-pisemny-pl/" target="_blank">Zerknij tutaj!</a> Ewentualnie możesz zapisać się na <a href=https://td2.info.pl/dzial-trenerski/trenerska-pomoc-dla-poczatkujacych/ target="_blank">szkolenie do trenerów</a>!</p>
         <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2025</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.0</a></p>
-    </div>
+    </footer>
 
     <!-- Alerty -->
     <div id="overlay">
