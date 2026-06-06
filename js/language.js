@@ -2,7 +2,7 @@ let currentDict = {};
 let orderDict = {};
 
 async function loadLang(lang) {
-    const res = await fetch(`lang/${lang}.json`);
+    const res = await fetch(`./lang/${lang}.json`);
     let dict = await res.json();
 
     dict = flattenTranslations(dict);
@@ -22,7 +22,7 @@ async function loadLang(lang) {
 async function loadOrderLang() {
     const orderOutputLang = localStorage.getItem("outputLang") || "pl";
 
-    const res = await fetch(`lang/${orderOutputLang}.json`);
+    const res = await fetch(`./lang/${orderOutputLang}.json`);
     orderDict = await res.json();
 
     orderDict = flattenTranslations(orderDict);
