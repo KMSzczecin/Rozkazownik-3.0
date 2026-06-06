@@ -26,7 +26,6 @@ async function loadOrderLang() {
     orderDict = await res.json();
 
     orderDict = flattenTranslations(orderDict);
-    console.log(orderDict);
 }
 
 function t(key, fallback = "") {
