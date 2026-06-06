@@ -1,3 +1,28 @@
+// ==================
+// Padding dla stopki
+// ==================
+
+function updateBodyPadding() {
+    const footer = document.getElementById('footer');
+    if (!footer) return;
+    const footerHeight = footer.offsetHeight;
+    document.body.style.paddingBottom = footerHeight + 'px';
+}
+
+// Aktualizacja po załadowaniu strony i przy każdej zmianie rozmiaru okna
+window.addEventListener('load', updateBodyPadding);
+window.addEventListener('resize', updateBodyPadding);
+
+// ==========
+// Odświeżacz
+// ==========
+
+document.getElementById("refreshButton").addEventListener("click", () => {
+    const iframe = document.getElementById("iframeRozkaz");
+    iframe.src = iframe.src;
+    loadLang(localStorage.getItem("lang") || "pl");
+});
+
 // ================
 // Customowe alerty
 // ================
@@ -61,8 +86,10 @@ function customAlert(msg, type) {
 // =========================
 
 function showToast(message, duration = 2000) {
-    // jeśli toast już istnieje, usuń go
+    console.log("showToast called with:", message);
     let toast = document.getElementById("toast");
+
+    // jeśli toast już istnieje, usuń go
     if (toast) toast.remove();
 
     // tworzymy nowy toast
@@ -93,7 +120,8 @@ function higherIframe() {
     if (czyUzytyRozwijacz == false) {
         // Zamiana przycisków
         czyUzytyRozwijacz = true;
-        przycisk.innerHTML = "↕️ Zwiń okno generatora do rozmiaru okna przeglądarki ↔️";
+        przyciskRozwijacza.dataset.i18n = "shrinkButton";
+        applyLang(currentDict);
 
         // Zmiana rozmiaru okna na maksymalne
         const oknoIframe = document.getElementById("iframeRozkaz");
@@ -103,7 +131,8 @@ function higherIframe() {
     else {
         // Zamiana przycisków
         czyUzytyRozwijacz = false;
-        przycisk.innerHTML = "↕️ Rozwiń okno generatora do pełnego rozmiaru ↔️";
+        przyciskRozwijacza.dataset.i18n = "expandButton";
+        applyLang(currentDict);
 
         // Zmiana rozmiaru okna na oryginalne
         const oknoIframe = document.getElementById("iframeRozkaz");
@@ -111,6 +140,27 @@ function higherIframe() {
         document.body.style.minWidth = "";
     }
 }
+
+
+// ==================================
+// Zmiana języka generowanego rozkazu
+// ==================================
+
+function outputLang(lang, showNotification = true) {
+    localStorage.setItem("outputLang", lang);
+    document.getElementById("outputLanguageChangeBtn")
+        .querySelector("img").src = `media/flags/${lang}.png`;
+
+    loadOrderLang();
+
+    if (showNotification) {
+        showToast(tpage("outputLangChanged"), 3000);
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    outputLang(localStorage.getItem("outputLang") || "pl", false);
+});
 
 
 // =============================
@@ -123,7 +173,7 @@ function copyToClipboard() {
 
     navigator.clipboard.writeText(textarea.value)
         .then(() => {
-            showToast("Twój rozkaz został skopiowany do schowka!", 2000);
+            showToast(tpage("orderCopied"), 2000);
         })
         .catch(err => {
             console.error("Nie udało się skopiować:", err);
@@ -140,21 +190,24 @@ var czyUzytyFormat = false;
 function removeFormatting() {
     const textbox = document.getElementById("poleNaWynik");
     let przycisk = document.getElementById("przyciskUsunieciaFormatowania");
+
     if (czyUzytyFormat == false) {
         // Zamiana przycisków
         czyUzytyFormat = true;
-        przycisk.innerHTML = "✒️ Przywróć formatowanie";
+        przycisk.dataset.i18n = "restoreFormattingButton";
+        applyLang(currentDict);
         let sformatowanyRozkaz = gotowyRozkaz;
         sformatowanyRozkaz = sformatowanyRozkaz.replace(/<\/?(b|u)>/g, "");
         textbox.value = sformatowanyRozkaz;
-        showToast("Formatowanie zostało ukryte.", 2000)
+        showToast(tpage("formattingRemoved"), 2000);
     }
     else {
         // Zamiana przycisków
         czyUzytyFormat = false;
-        przycisk.innerHTML = "✒️ Usuń formatowanie";
+        przycisk.dataset.i18n = "removeFormattingButton";
+        applyLang(currentDict);
         textbox.value = gotowyRozkaz;
-        showToast("Formatowanie zostało przywrócone.", 2000)
+        showToast(tpage("formattingRestored"), 2000);
     }
 }
 
@@ -165,7 +218,7 @@ function removeFormatting() {
 function exportPDF() {
     const iframe = document.getElementById("iframeRozkaz");
 
-    showToast("Za chwilę zostanie otwarte systemowe okno drukowania. Wybierz drukarkę lub opcję \"Zapisz jako PDF\" by zapisać plik.", 6000);
+    showToast(tpage("savedAsPDF"), 6000);
 
     setTimeout(() => {
         iframe.contentWindow.focus();
@@ -178,7 +231,18 @@ function exportPDF() {
 // ======================
 
 function openChangelog() {
-    fetch("changelog.txt", { cache: "no-store" })
+    let setLang = localStorage.getItem("lang");
+    let changelogName = "changelog.txt";
+
+    if (setLang === "pl") {
+        changelogName = "changelog.txt";
+    }
+
+    if (setLang === "en") {
+        changelogName = "changelog_en.txt";
+    }
+
+    fetch(changelogName, { cache: "no-store" })
         .then(response => {
             if (!response.ok) throw new Error("Nie udało się wczytać changeloga");
             return response.text();
@@ -188,7 +252,7 @@ function openChangelog() {
         })
         .catch(err => {
             console.log("Błąd podczas wczytywania changeloga: " + err.message);
-            customAlert("Nie udało się wczytać changeloga. Spróbuj ponownie później.", "error");
+            customAlert(tpage("failedChangelogLoad"), "error");
         });
 }
 

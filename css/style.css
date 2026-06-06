@@ -27,7 +27,7 @@ body {
 }
 
 .topbar #baner {
-    background-color: #110022;
+    background-color: #aa00ff;
     max-height: 4rem;
     margin: 0.5rem 0 0.5rem 2rem;
     border-radius: 1rem;
@@ -103,6 +103,12 @@ body {
     z-index: 2;
 }
 
+/* Dla języka rozkazu */
+#przyciski .toolbarButton .languageSelector {
+    top: -2px;
+    left: 100%; /* wyrównanie do prawej krawędzi przycisku */
+}
+
 /* Pokaż menu przy hover */
 .toolbarButton:hover .languageSelector {
     display: flex;
@@ -148,10 +154,11 @@ body {
     min-height: 2.5em;
     background-color: #ddd;
     color: #222;
+    font-weight: bold;
 }
 
 #divWynikowy #przyciski button {
-    width: 20vw;
+    width: 24rem;
 }
 
 #przyciski button:hover {
@@ -236,6 +243,7 @@ body.modal-open {
 .footer {
     position: fixed;            /* przykleja element do okna przeglądarki */
     left: 50%;
+    padding: 0 2rem;
     transform: translate(-50%, 0);
     bottom: 0;                  /* ustawia go na dole strony */
     width: 90vw;                /* szerokość na całą stronę */
@@ -341,16 +349,14 @@ body.modal-open {
     }
 }
 
-@media (max-width: 600px) {
-    .topbar #baner {
-        background-color: #7f00ff;
-    }
+@media (max-width: 900px) {
     #przyciski {
         flex-direction: column;
         margin: 0 10vw 0;
     }
     #przyciski button {
         width: 80vw;
+        font-weight: bold;
     }
 
     #divWynikowy #przyciski button {

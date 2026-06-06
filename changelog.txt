@@ -1,9 +1,10 @@
 <b>Changelog - Rozkazownik 3.0</b><br>
 <br>
-<b>v. 1.0</b> - 01.11.2025<br>
-- wydanie aplikacji w wersji testowej<br>
-<br>
-<b>v. 1.0.1</b> - 06.06.2026<br>
+<b>v. 1.1</b> - 06.06.2026<br>
+- dodanie systemu tłumaczeń na język angielski (dla treści strony i generowanych rozkazów)<br>
 - poprawki błędów<br>
 - dodanie większej ilości zabezpieczeń przed wydaniem niewłaściowego rozkazu<br>
-- zmiana systemu zapisu do PDF
+- zmiana systemu zapisu do PDF<br>
+<br>
+<b>v. 1.0</b> - 01.11.2025<br>
+- wydanie aplikacji w wersji testowej<br>

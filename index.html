@@ -10,7 +10,7 @@
 <body>
     <!-- Paskologocoś -->
     <header class="topbar">
-        <a href="index.html" title="Strona główna">
+        <a href="index.html" data-i18n-title="homepage">
             <picture>
                 <source media="(max-width: 600px)" srcset="media/img/512.png">
                 <img src="media/img/baner.png" id="baner" alt="Rozkazownik 3.0">
@@ -18,24 +18,24 @@
             
         </a>
         <nav id="toolbar">
-            <div class="toolbarButton" id="languageChange" tabindex="0" title="Zmień język">
-                <div class="buttonContent">
-                    <img src="media/flags/pl.png" alt="PL">
+            <div class="toolbarButton" id="languageChange" tabindex="0" data-i18n-title="changeLanguage">
+                <div class="buttonContent" id="languageChangeBtn">
+                    <img>
                     <p>▼</p>
                 </div>
                 <div class="languageSelector">
-                    <div class="languageOption" id="langPL" title="Polski">
-                        <img src="media/flags/pl.png" alt="PL">
+                    <div class="languageOption" id="langPL" title="Polski" onclick="loadLang('pl')">
+                        <img src="media/flags/pl.png">
                     </div>
-                    <!-- <div class="languageOption" id="langEN" title="English" aria-label="English language" onclick="languageChange(`en`);>
+                    <div class="languageOption" id="langEN" title="English" onclick="loadLang('en')">
                         <img src="media/flags/en.png">
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <a href="oldReleases.html" title="Rozkazownik 2.0" tabindex="0" class="toolbarButton" id="oldVersion">
                 <img src="media/img/oldRozkazownik.png" alt="v. 2.0">
             </a>
-            <div class="toolbarButton" id="refreshButton" tabindex="0" title="Odśwież stronę z rozkazem" aria-label="Odśwież stronę z rozkazem" onclick="window.location.reload();">
+            <div class="toolbarButton" id="refreshButton" tabindex="0" data-i18n-title="refresh">
                 <img src="media/img/refresh.png" alt="<-">
             </div>
         </nav>
@@ -50,8 +50,22 @@
 
         <!-- Przyciski pod oknem z rozkazem -->
         <div id="przyciski">
-            <button type="button" id="przyciskRozwijacza" onclick="higherIframe()">↕️ Rozwiń okno generatora do pełnego rozmiaru ↔️</button>
-            <button type="button" id="przyciskGenerowania" onclick="makeItWork()">📄 <b>Wygeneruj rozkaz!</b> 📄</button>
+            <button type="button" id="przyciskRozwijacza" onclick="higherIframe()" data-i18n="expandButton"></button>
+            <button type="button" id="przyciskGenerowania" onclick="makeItWork()" data-i18n="generateButton"></button>
+            <div class="toolbarButton" id="outputLanguageChange" tabindex="0" data-i18n-title="changeLanguage">
+                <div class="buttonContent" id="outputLanguageChangeBtn">
+                    <img src="media/flags/pl.png">
+                    <p>▼</p>
+                </div>
+                <div class="languageSelector">
+                    <div class="languageOption" id="langPL" title="Polski" onclick="outputLang('pl')">
+                        <img src="media/flags/pl.png">
+                    </div>
+                    <div class="languageOption" id="langEN" title="English" onclick="outputLang('en')">
+                        <img src="media/flags/en.png">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Wygenerowany wynik-->
@@ -60,8 +74,8 @@
 
     <!-- Stopka -->
     <footer class="footer" id="footer">
-        <p>❓ Potrzebujesz pomocy w wypełnieniu rozkazu? <a href="https://pitkowakolej.pl/rozkaz-pisemny-pl/" target="_blank">Zerknij tutaj!</a> Ewentualnie możesz zapisać się na <a href=https://td2.info.pl/dzial-trenerski/trenerska-pomoc-dla-poczatkujacych/ target="_blank">szkolenie do trenerów</a>!</p>
-        <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2026</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.0.1</a></p>
+        <p><span data-i18n="help1"></span><a href="https://pitkowakolej.pl/rozkaz-pisemny-pl/" target="_blank" data-i18n="helpLink1"></a> <span data-i18n="help2"></span> <a href=https://td2.info.pl/dzial-trenerski/trenerska-pomoc-dla-poczatkujacych/ target="_blank" data-i18n="helpLink2"></a>!</p>
+        <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2026</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.1</a></p>
     </footer>
 
     <!-- Alerty -->
@@ -75,18 +89,6 @@
     <!-- Ładowanie skryptów -->
     <script src="js/index.js"></script>
     <script src="js/przetwarzator.js"></script>
-    <script src="js/languageChanger.js"></script>
-    <script>
-        function updateBodyPadding() {
-            const footer = document.getElementById('footer');
-            if (!footer) return;
-            const footerHeight = footer.offsetHeight;
-            document.body.style.paddingBottom = footerHeight + 'px';
-        }
-
-        // Aktualizacja po załadowaniu strony i przy każdej zmianie rozmiaru okna
-        window.addEventListener('load', updateBodyPadding);
-        window.addEventListener('resize', updateBodyPadding);
-    </script>
+    <script src="js/language.js"></script>
 </body>
 </html>

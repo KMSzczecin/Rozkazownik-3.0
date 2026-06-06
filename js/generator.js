@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // alert przy próbie kliknięcia w readonly
         input.addEventListener('click', () => {
             if (input.readOnly) {
-                parent.customAlert("Aby edytować to pole, musisz najpierw zaznaczyć instrukcję, której ono dotyczy!", "alert");
+                parent.customAlert(tpage("noCheckedCheckboxError"), "alert");
             }
         });
     });
@@ -136,3 +136,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // reakcja na zmianę
     checkbox.addEventListener("change", updateState);
 });
+
+// ====================
+// Tłumaczenie, odbiór!
+// ====================
+
+let currentDict = {};
+
+window.addEventListener("message", (e) => {
+    if (e.data?.type !== "lang") return;
+
+    currentDict = e.data.dict; // 🔥 TO JEST KLUCZ
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (currentDict[key]) el.innerHTML = currentDict[key];
+    });
+
+    document.querySelectorAll("[data-i18n-title]").forEach(el => {
+        const key = el.dataset.i18nTitle;
+        if (currentDict[key]) el.title = currentDict[key];
+    });
+});
+
+function tpage(key, fallback = "") {
+    return currentDict[key] ?? fallback ?? key;
+}
