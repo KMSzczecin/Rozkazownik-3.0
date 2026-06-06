@@ -18,13 +18,13 @@
             
         </a>
         <nav id="toolbar">
-            <div class="toolbarButton" id="languageChange" tabindex="0" title="Zmień język" aria-label="Zmień język">
+            <div class="toolbarButton" id="languageChange" tabindex="0" title="Zmień język">
                 <div class="buttonContent">
                     <img src="media/flags/pl.png" alt="PL">
                     <p>▼</p>
                 </div>
                 <div class="languageSelector">
-                    <div class="languageOption" id="langPL" title="Polski" aria-label="język polski" onclick="languageChange(`pl`);">
+                    <div class="languageOption" id="langPL" title="Polski">
                         <img src="media/flags/pl.png" alt="PL">
                     </div>
                     <!-- <div class="languageOption" id="langEN" title="English" aria-label="English language" onclick="languageChange(`en`);>
@@ -32,7 +32,7 @@
                     </div> -->
                 </div>
             </div>
-            <a href="oldReleases.html" title="Rozkazownik 2.0" aria-label="Rozkazownik 2.0" tabindex="0" class="toolbarButton" id="oldVersion">
+            <a href="oldReleases.html" title="Rozkazownik 2.0" tabindex="0" class="toolbarButton" id="oldVersion">
                 <img src="media/img/oldRozkazownik.png" alt="v. 2.0">
             </a>
             <div class="toolbarButton" id="refreshButton" tabindex="0" title="Odśwież stronę z rozkazem" aria-label="Odśwież stronę z rozkazem" onclick="window.location.reload();">
@@ -61,7 +61,7 @@
     <!-- Stopka -->
     <footer class="footer" id="footer">
         <p>❓ Potrzebujesz pomocy w wypełnieniu rozkazu? <a href="https://pitkowakolej.pl/rozkaz-pisemny-pl/" target="_blank">Zerknij tutaj!</a> Ewentualnie możesz zapisać się na <a href=https://td2.info.pl/dzial-trenerski/trenerska-pomoc-dla-poczatkujacych/ target="_blank">szkolenie do trenerów</a>!</p>
-        <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2025</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.0</a></p>
+        <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2026</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.0.1</a></p>
     </footer>
 
     <!-- Alerty -->
@@ -73,8 +73,9 @@
     </div>
 
     <!-- Ładowanie skryptów -->
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/przetwarzator.js"></script>
+    <script src="js/languageChanger.js"></script>
     <script>
         function updateBodyPadding() {
             const footer = document.getElementById('footer');

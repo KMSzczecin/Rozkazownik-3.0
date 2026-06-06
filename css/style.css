@@ -1,13 +1,12 @@
 :root, html {
     color-scheme: dark; /* mówimy przeglądarce, że strona jest ciemna */
-    forced-color-adjust: none; /* zapobiega wymuszaniu kolorów w high-contrast */
     overflow-y: scroll;
 }
 
 body {
     background: #000000;
     background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 31, 3, 1) 50%, rgba(0, 0, 0, 1) 100%);
-    color: #ffffff !important;
+    color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -21,8 +20,7 @@ body {
     display: flex;
     align-items: center;
     margin: 0 auto 1vh;
-    max-height: 10vh;
-    min-height: 50px;
+    max-height: 6rem;
     border: 3px #000000 solid;
     border-top: 0;
     border-radius: 0 0 20px 20px;
@@ -30,26 +28,24 @@ body {
 
 .topbar #baner {
     background-color: #110022;
-    max-height: 8vh;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    margin-left: 3vw;
-    border-radius: 10px;
+    max-height: 4rem;
+    margin: 0.5rem 0 0.5rem 2rem;
+    border-radius: 1rem;
     box-shadow: 0 0 30px 2px #333333; 
 }
 
 #toolbar {
     display: flex;
     position: fixed;
-    top: -3px;
-    right: 9vw;
+    top: -0.25rem;
+    right: 8vw;
     align-items: center;
     background-color: #ffffff;
     color: #ffffff;
-    max-height: 10vh;
+    max-height: 4rem;
     border: 3px #000000 dotted;
-    border-radius: 0 0 20px 20px;
-    z-index: 50;
+    border-radius: 0 0 1rem 1rem;
+    z-index: 1;
     padding: 0.2em;
 }
 
@@ -58,8 +54,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 3rem;
+    height: 3rem;
     margin: 0.2em;
     background-color: #888888;
     border: 2px #000000 solid;
@@ -68,7 +64,7 @@ body {
 }
 
 .toolbarButton img {
-    width: 4vh;
+    width: 2rem;
     height: auto;
     border-radius: 0;
     margin: 0.5vh;
@@ -85,36 +81,30 @@ body {
 }
 
 .toolbarButton .buttonContent img {
-    width: 3vh;
+    width: 2rem;
     height: auto;
     margin: 0.5vw 0 0;
 }
 
 .toolbarButton .buttonContent p {
-    margin: 0.5vw 0 0;
-    font-size: 1.5vh;
+    margin: 0.2rem 0 0;
+    font-size: 1rem;
 }
 
 /* Menu rozwijane */
 .toolbarButton .languageSelector {
-    display: none;               /* ukryte domyślnie */
-    position: absolute;          /* względem przycisku */
-    top: 100%;                      /* wyrównanie góry z przyciskiem */
-    left: -15%;                  /* wysuwa się w prawo */
+    display: none;               
+    position: absolute;          
+    top: 100%;
     background-color: #888888;
-    border: 3px #000000 solid;
-    border-radius: 10px 10px 10px 10px;
+    border: 0.2rem #000000 solid;
+    border-radius: 0.5rem;
     flex-direction: column;
-    z-index: 51;
+    z-index: 2;
 }
 
 /* Pokaż menu przy hover */
 .toolbarButton:hover .languageSelector {
-    display: flex;
-}
-
-/* Pokaż menu przy hover */
-.languageSelector:hover {
     display: flex;
 }
 
@@ -133,7 +123,6 @@ body {
     flex-direction: column;
     margin: 0 auto 0;
     align-items: center;
-    will-change: transform;
 }
 
 .iframeRozkaz {
@@ -141,8 +130,8 @@ body {
     height: 75vh;
     max-width: 1600px;
     max-height: 1080px;
-    border: 5px solid #000000;
-    border-radius: 20px;
+    border: 0.3rem solid #000000;
+    border-radius: 1rem;
 }
 
 /* Przyciski */
@@ -153,15 +142,12 @@ body {
     margin: 0 auto 0;
 }
 #przyciski button {
-    width: 30vw;
-    margin: 1vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    max-width: 800px;
+    margin: 0.5rem;
+    min-width: 24rem;
     line-height: 1.2;
     min-height: 2.5em;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #ddd;
+    color: #222;
 }
 
 #divWynikowy #przyciski button {
@@ -169,7 +155,7 @@ body {
 }
 
 #przyciski button:hover {
-    background-color: #cccccc;
+    background-color: #bbb;
     cursor: pointer;
 }
 
@@ -183,7 +169,7 @@ body {
 }
 
 .divWynikowy h2 {
-    margin: 0 0 10px;
+    margin: 0 0 0.5rem;
     text-align: center;
 }
 
@@ -208,17 +194,17 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 5;
 }
 
 #overlayWindow {
     background-color: #666666;
     color: #ffffff;
-    padding: 20px 30px;
-    border-radius: 12px;
-    max-width: 400px;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    max-width: 25rem;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.3);
 }
 
 #overlayWindow p {
@@ -253,19 +239,19 @@ body.modal-open {
     transform: translate(-50%, 0);
     bottom: 0;                  /* ustawia go na dole strony */
     width: 90vw;                /* szerokość na całą stronę */
-    min-height: 5vh;           /* minimalna wysokość stopki */
+    min-height: 3.5rem;           /* minimalna wysokość stopki */
     background: #42254f;
     background: linear-gradient(90deg, rgba(66, 37, 79, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(66, 37, 79, 1) 100%);
     color: #ffffff;             /* kolor tekstu */
     border: 2px #000000 solid;
-    border-radius: 10px;
+    border-radius: 1rem;
     border-bottom: 0;
     text-align: center;         /* wyśrodkowanie tekstu */
     display: flex;              /* aktywuje flexbox */
     flex-direction: column;     /* układ w kolumnie */
     align-items: center;        /* centrowanie w pionie */
     justify-content: center;    /* centrowanie w poziomie */
-    z-index: 10;              /* zapewnia, że będzie na wierzchu innych elementów */
+    z-index: 1;              /* zapewnia, że będzie na wierzchu innych elementów */
 }
 
 .footer p {
@@ -285,7 +271,8 @@ body.modal-open {
 /* Tościk */
 #toast {
     position: fixed;
-    bottom: 100px;
+    text-align: center;
+    bottom: 6rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: #555555;
@@ -296,7 +283,7 @@ body.modal-open {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
-    z-index: 30;
+    z-index: 4;
 }
 #toast.show {
     opacity: 1;
@@ -318,7 +305,7 @@ body.modal-open {
     border: 5px #ffffff dotted;
 }
 
-#oldReleases h1, h4, h6, p {
+#oldReleases h1, #oldReleases h4, #oldReleases h6, #oldReleases p {
     margin: 1vh;
     text-align: center;
 }
@@ -349,8 +336,8 @@ body.modal-open {
 
 @media (prefers-reduced-motion: reduce) {
     * {
-        animation: none !important;
-        transition: none !important;
+        animation: none;
+        transition: none;
     }
 }
 

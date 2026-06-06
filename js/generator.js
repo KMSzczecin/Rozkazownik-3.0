@@ -96,17 +96,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     allCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
-            const row = checkbox.closest('tr'); // szukamy rodzica <tr>
+            const row = checkbox.closest('tr');
             if (!row) return;
 
-            // wszystkie inputy i textarea w tym wierszu
             const inputsInRow = row.querySelectorAll('input[type="text"], textarea');
-            
+
+            const lock2185 = document.getElementById("check2185")?.checked;
+
             inputsInRow.forEach(input => {
-                // wyjątki — te pola zawsze edytowalne
                 if (alwaysEditable.includes(input.id)) return;
+                
+                if (input.id === "textbox2180_x4" && lock2185) {
+                    return; // 21.85 ma priorytet
+                }
+
                 input.readOnly = !checkbox.checked;
             });
         });
     });
+});
+
+// ==================================================
+// Zaznaczenie instrukcji 21.85 odblokowuje x.4 21.80
+// ==================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const checkbox = document.getElementById("check2185");
+    const input = document.getElementById("textbox2180_x4");
+
+    if (!checkbox || !input) return;
+
+    function updateState() {
+        input.readOnly = !checkbox.checked;
+    }
+
+    // stan początkowy
+    updateState();
+
+    // reakcja na zmianę
+    checkbox.addEventListener("change", updateState);
 });

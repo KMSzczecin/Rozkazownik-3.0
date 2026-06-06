@@ -313,6 +313,10 @@ tr[class^="row218"] .textbox input[type="text"]:hover {
     background-color: #ffff00;
 }
 
+tr[class^="row218"] .textbox input[type="text"][readonly]:hover {
+    background-color: #ff0000;
+}
+
 /* 21.80 */
 td input#textbox2180_x1, td input#textbox2180_x3, td input#textbox2180_x5 {
     width: 4em;
@@ -384,4 +388,36 @@ td textarea#textbox2320_x96[readonly]:hover {
 
 td textarea#textbox2320_x96:focus {
     outline: none;
+}
+
+/* Do zapisu: */
+@media print {
+    @page {
+        size: 1580px 1046px;
+        margin: 0;
+    }
+
+    html, body {
+        width: 1580px;
+        height: 1046px;
+        margin: 0 10px;
+        padding: 0;
+        gap: 0;
+    }
+
+    body {
+        background-color: #f4f4f4 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    td textarea#textbox2320_x96 {
+        background-image: radial-gradient(circle, #000000 1px, transparent 1px);
+    }
+
+    button,
+    nav,
+    .toolbar {
+        display: none !important;
+    }
 }
