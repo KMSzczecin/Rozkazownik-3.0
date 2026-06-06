@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <title>Rozkazownik 3.0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="media/img/favicon.ico">
+</head>
+<body>
+    <!-- Paskologocoś -->
+    <header class="topbar">
+        <a href="index.html" title="Strona główna">
+            <picture>
+                <source media="(max-width: 600px)" srcset="media/img/512.png">
+                <img src="media/img/baner.png" id="baner" alt="Rozkazownik 3.0">
+            </picture>
+            
+        </a>
+        <nav id="toolbar">
+            <div class="toolbarButton" id="languageChange" tabindex="0" title="Zmień język" aria-label="Zmień język">
+                <div class="buttonContent">
+                    <img src="media/flags/pl.png" alt="PL">
+                    <p>▼</p>
+                </div>
+                <div class="languageSelector">
+                    <div class="languageOption" id="langPL" title="Polski" aria-label="język polski" onclick="languageChange(`pl`);">
+                        <img src="media/flags/pl.png" alt="PL">
+                    </div>
+                    <!-- <div class="languageOption" id="langEN" title="English" aria-label="English language" onclick="languageChange(`en`);>
+                        <img src="media/flags/en.png">
+                    </div> -->
+                </div>
+            </div>
+            <a href="oldReleases.html" title="Rozkazownik 2.0" aria-label="Rozkazownik 2.0" tabindex="0" class="toolbarButton" id="oldVersion">
+                <img src="media/img/oldRozkazownik.png" alt="v. 2.0">
+            </a>
+            <div class="toolbarButton" id="refreshButton" tabindex="0" title="Odśwież stronę z rozkazem" aria-label="Odśwież stronę z rozkazem" onclick="window.location.reload();">
+                <img src="media/img/refresh.png" alt="<-">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Zawartość strony -->
+    <main id="oldReleases">
+        <img src="media/img/oldRozkazownik2.png">
+        <h1>Rozkazownik - wersja 2.0.0</h1>
+        <div id="przyciski">
+            <a href="download/Rozkazownik_setup-2.0.exe"><button type="button" id="downloadButton">💾 Download</button></a>
+        </div>
+        <h6>Last updated: 04.01.2022. No support provided.</h6>
+        <p>Stara wersja programu, napisana jeszcze w C++, działająca z poziomu konsoli. Wspierała trzy języki - polski, niemiecki i angielski w interfejsie, jak i w wydawanych rozkazach.</p>
+        <p>Znajdujące się poniżej informacje pochodzą z <a href="https://td2.info.pl/narzedzie-tools/rozkazownik-generator-rozkazow-pisemnych/">oryginalnego wątku z forum TD2</a>.</p>
+        <p>W skrócie - jest to samodzielny program obsługiwany poprzez Windowsową konsolę cmd - po otwarciu pliku exe całość programu wykonuje się w cmdku z drobną pomocą Notatnika przy wyświetlaniu gotowych rozkazów. Obsługuje się go za pomocą klawiatury, wpisując i zatwierdzając wymagane dane. Sposób działania jest bardzo podobny do KGRP autorstwa Stasia.</p>
+        <h4>Najważniejsze funkcje:</h4>
+        <ul>
+            <li><b>generowanie rozkazów pisemnych S, N i O,</b></li>
+            <li>gotowy szablon na generowanie rozkazu na <b>pominięcie wskaźnika W5</b>/kontynuowanie jazdy,</li>
+            <li>możliwość dodawania kilku działek jednocześnie,</li>
+            <li>aplikacja zapisuje każdy wydany rozkaz w postaci pliku txt w miejscu instalacji z oznaczeniem typu, daty i godziny,</li>
+            <li>pobieranie aktualnej daty i godziny, by ta została umieszczona w rozkazie.</li>
+        </ul>
+        <p><b>Dostępne języki:</b> polski, angielski <i>(English, wzory rozkazów: leon78513)</i>, niemiecki <i>(Deutsch, tłumaczenie: EUgenio07 + Saix95)</i></p>
+    </main>
+
+    <!-- Stopka -->
+    <footer class="footer" id="footer">
+        <p>❓ Potrzebujesz pomocy w wypełnieniu rozkazu? <a href="https://pitkowakolej.pl/rozkaz-pisemny-pl/" target="_blank">Zerknij tutaj!</a> Ewentualnie możesz zapisać się na <a href=https://td2.info.pl/dzial-trenerski/trenerska-pomoc-dla-poczatkujacych/ target="_blank">szkolenie do trenerów</a>!</p>
+        <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2025</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.0</a></p>
+    </footer>
+
+    <!-- Alerty -->
+    <div id="overlay">
+        <div id="overlayWindow">
+            <div id="overlayMsg" style="margin-bottom: 20px; font-weight: 500;"></div>
+            <button id="overlayButton">OK</button>
+        </div>
+    </div>
+
+    <!-- Ładowanie skryptów -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <script>
+        function updateBodyPadding() {
+            const footer = document.getElementById('footer');
+            if (!footer) return;
+            const footerHeight = footer.offsetHeight + 5;
+            document.body.style.paddingBottom = footerHeight + 'px';
+        }
+
+        // Aktualizacja po załadowaniu strony i przy każdej zmianie rozmiaru okna
+        window.addEventListener('load', updateBodyPadding);
+        window.addEventListener('resize', updateBodyPadding);
+    </script>
+</body>
+</html>

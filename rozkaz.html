@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/generator.css">
+</head>
+<body>
+    <!-- Lewa tabela -->
+    <div class="lewatabela">
+        <table>
+            <thead>
+                <!-- Rozkaz pisemny -->
+                <tr class="naglowek">
+                    <td colspan="4" data-i18n="orderName"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Nagłówek rozkazu -->
+                <tr class="naglowekRozkazu">
+                    <!-- Numer pociągu -->
+                    <td class="nrPociagu" colspan="2">
+                        <input type="text" id="nrPoc" placeholder="1812">
+                        <br>
+                        <span data-i18n="orderHeader_A"></span>
+                    </td>
+                    <!-- Data -->
+                    <td class="data" colspan="2">
+                        <input type="text" id="data" placeholder="14.12.2025r.">
+                        <br>
+                        <span data-i18n="orderHeader_B"></span>
+                        <button id="buttonData" onclick="getCurrentDate()"><span data-i18n="orderHeader_DateBtn"></span></button>
+                    </td>
+                </tr>
+                <tr class="naglowekRozkazu">
+                    <!-- Lokalizacja -->
+                    <td class="lokalizacja" colspan="2">
+                        <input type="text" id="lokalizacja" placeholder="Kruszki - Dobrzyniec">
+                        <br>
+                        <span data-i18n="orderHeader_C"></span>
+                    </td>
+                    <!-- Lokalizacja nadawcy -->
+                    <td class="stacja" colspan="2">
+                        <input type="text" id="stacja" placeholder="Dobrzyniec">
+                        <br>
+                        <span data-i18n="orderHeader_D"></span>
+                    </td>
+                </tr>
+
+                <!-- ================= -->
+                <!-- Konkretne działki -->
+                <!-- ================= -->
+
+                <!-- 22.00 i 99 -->
+                <tr class="row2200_99">
+                    <td class="check">
+                        <input type="checkbox" id="check2200">
+                        <label for="check2200">22</label>
+                    </td>
+                    <td class="opis2200">
+                        <b><span data-i18n="order22_text1"></span></b>
+                    </td>
+                    <td class="check99">
+                        <input type="checkbox" id="check99">
+                        <label for="check99">99</label>
+                    </td>
+                    <td class="opis99">
+                        <b><span data-i18n="order99_text1"></span></b>
+                        <span class="textbox">
+                            <input type="text" id="textbox99_x1">
+                            <label for="textbox99_x1"><span data-i18n="order99_x1"></span></label>
+                        </span>  
+                    </td>
+                </tr>
+
+                <!-- 21.10 -->
+                <tr class="row2110">
+                    <td class="check">
+                        <input type="checkbox" id="check2110">
+                        <label for="check2110">21.10</label>
+                    </td>
+                    <td class="opis3000" colspan="3">
+                        <b><span data-i18n="order2110_text1"></span></b>
+                        <span data-i18n="order2110_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x1">
+                            <label for="textbox2110_x1"><span data-i18n="order2110_x1"></span></label>
+                        </span>    
+
+                        <span data-i18n="order2110_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x2">
+                            <label for="textbox2110_x2"><span data-i18n="order2110_x2"></span></label>
+                        </span> 
+
+                        <br>
+
+                        <span data-i18n="order2110_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x3">
+                            <label for="textbox2110_x3"><span data-i18n="order2110_x3"></span></label>
+                        </span>
+
+                        <span data-i18n="order2110_text5"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x4">
+                            <label for="textbox2110_x4"><span data-i18n="order2110_x4"></span></label>
+                        </span>
+
+                        <br>
+
+                        <span data-i18n="order2110_text6"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x5">
+                            <label for="textbox2110_x5"><span data-i18n="order2110_x5"></span></label>
+                        </span>
+
+                        <span data-i18n="order2110_text7"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x6">
+                            <label for="textbox2110_x6"><span data-i18n="order2110_x6"></span></label>
+                        </span>
+
+                        <span data-i18n="order2110_text8"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2110_x7">
+                            <label for="textbox2110_x7"><span data-i18n="order2110_x7"></span></label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.15 -->
+                <tr class="row2115">
+                    <td class="check">
+                        <input type="checkbox" id="check2115">
+                        <label for="check2115">21.15</label>
+                    </td>
+
+                    <td class="opis2115" colspan="3">
+                        <b><span data-i18n="order2115_text1"></span></b>
+
+                        <span data-i18n="order2115_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x1">
+                            <label for="textbox2115_x1">
+                                <span data-i18n="order2115_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2115_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x2">
+                            <label for="textbox2115_x2">
+                                <span data-i18n="order2115_x2"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2115_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x3">
+                            <label for="textbox2115_x3">
+                                <span data-i18n="order2115_x3"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <span data-i18n="order2115_text5"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x4">
+                            <label for="textbox2115_x4">
+                                <span data-i18n="order2115_x4"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2115_text6"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x5">
+                            <label for="textbox2115_x5">
+                                <span data-i18n="order2115_x5"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2115_text7"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2115_x6">
+                            <label for="textbox2115_x6">
+                                <span data-i18n="order2115_x6"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.20 -->
+                <tr class="row2120">
+                    <td class="check">
+                        <input type="checkbox" id="check2120">
+                        <label for="check2120">21.20</label>
+                    </td>
+
+                    <td class="opis2120" colspan="3">
+                        <span data-i18n="order2120_text1"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2120_x1">
+                            <label for="textbox2120_x1">
+                                <span data-i18n="order2120_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2120_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2120_x2">
+                            <label for="textbox2120_x2">
+                                <span data-i18n="order2120_x2"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2120_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2120_x3">
+                            <label for="textbox2120_x3">
+                                <span data-i18n="order2120_x3"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <u>
+                            <b><span data-i18n="order2120_text4"></span></b>
+                            <br>
+                            <span data-i18n="order2120_text5"></span>
+                            <b><span data-i18n="order2120_text6"></span></b>
+                        </u>
+                    </td>
+                </tr>
+
+                <!-- 21.25 -->
+                <tr class="row2125">
+                    <td class="check">
+                        <input type="checkbox" id="check2125">
+                        <label for="check2125">21.25</label>
+                    </td>
+
+                    <td class="opis2125" colspan="3">
+                        <span data-i18n="order2125_text1"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x1">
+                            <label for="textbox2125_x1">
+                                <span data-i18n="order2125_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2125_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x2">
+                            <label for="textbox2125_x2">
+                                <span data-i18n="order2125_x2"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2125_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x3">
+                            <label for="textbox2125_x3">
+                                <span data-i18n="order2125_x3"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2125_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2125_x4">
+                            <label for="textbox2125_x4">
+                                <span data-i18n="order2125_x4"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.35 -->
+                <tr class="row2135">
+                    <td class="check">
+                        <input type="checkbox" id="check2135">
+                        <label for="check2135">21.35</label>
+                    </td>
+
+                    <td class="opis2135" colspan="3">
+                        <b><span data-i18n="order2135_text1"></span></b>
+
+                        <span data-i18n="order2135_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2135_x1">
+                            <label for="textbox2135_x1">
+                                <span data-i18n="order2135_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2135_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2135_x2">
+                            <label for="textbox2135_x2">
+                                <span data-i18n="order2135_x2"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.40 -->
+                <tr class="row2140">
+                    <td class="check">
+                        <input type="checkbox" id="check2140">
+                        <label for="check2140">21.40</label>
+                    </td>
+
+                    <td class="opis2140" colspan="3">
+                        <b><span data-i18n="order2140_text1"></span></b>
+
+                        <span data-i18n="order2140_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x1">
+                            <label for="textbox2140_x1">
+                                <span data-i18n="order2140_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2140_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x2">
+                            <label for="textbox2140_x2">
+                                <span data-i18n="order2140_x2"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <span data-i18n="order2140_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x3">
+                            <label for="textbox2140_x3">
+                                <span data-i18n="order2140_x3"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2140_text5"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2140_x96">
+                            <label for="textbox2140_x96">
+                                <span data-i18n="order2140_x96"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.45 -->
+                <tr class="row2145">
+                    <td class="check">
+                        <input type="checkbox" id="check2145">
+                        <label for="check2145">21.45</label>
+                    </td>
+
+                    <td class="opis2145" colspan="3">
+                        <span data-i18n="order2145_text1"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2145_x1">
+                            <label for="textbox2145_x1">
+                                <span data-i18n="order2145_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2145_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2145_x2">
+                            <label for="textbox2145_x2">
+                                <span data-i18n="order2145_x2"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <b>
+                            <span data-i18n="order2145_text3"></span>
+                        </b>
+                    </td>
+                </tr>
+
+                <!-- 21.50 -->
+                <tr class="row2150">
+                    <td class="check">
+                        <input type="checkbox" id="check2150">
+                        <label for="check2150">21.50</label>
+                    </td>
+
+                    <td class="opis2150" colspan="3">
+                        <b><span data-i18n="order2150_text1"></span></b>
+
+                        <span data-i18n="order2150_text2"></span>
+
+                        <br>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2150_x1">
+                            <label for="textbox2150_x1">
+                                <span data-i18n="order2150_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2150_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2150_x2">
+                            <label for="textbox2150_x2">
+                                <span data-i18n="order2150_x2"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2150_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2150_x3">
+                            <label for="textbox2150_x3">
+                                <span data-i18n="order2150_x3"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <b>
+                            <span data-i18n="order2150_text5"></span>
+                        </b>
+                    </td>
+                </tr>
+
+                <!-- 21.55 -->
+                <tr class="row2155">
+                    <td class="check">
+                        <input type="checkbox" id="check2155">
+                        <label for="check2155">21.55</label>
+                    </td>
+
+                    <td class="opis2155" colspan="3">
+                        <b><span data-i18n="order2155_text1"></span></b>
+
+                        <span data-i18n="order2155_text2"></span>
+
+                        <br>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2155_x1">
+                            <label for="textbox2155_x1">
+                                <span data-i18n="order2155_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2155_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2155_x2">
+                            <label for="textbox2155_x2">
+                                <span data-i18n="order2155_x2"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2155_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2155_x3">
+                            <label for="textbox2155_x3">
+                                <span data-i18n="order2155_x3"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.60 -->
+                <tr class="row2160">
+                    <td class="check">
+                        <input type="checkbox" id="check2160">
+                        <label for="check2160">21.60</label>
+                    </td>
+
+                    <td class="opis2160" colspan="3">
+                        <b><span data-i18n="order2160_text1"></span></b>
+
+                        <span data-i18n="order2160_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x1">
+                            <label for="textbox2160_x1">
+                                <span data-i18n="order2160_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2160_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x2">
+                            <label for="textbox2160_x2">
+                                <span data-i18n="order2160_x2"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <span data-i18n="order2160_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x3">
+                            <label for="textbox2160_x3">
+                                <span data-i18n="order2160_x3"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2160_text5"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x4">
+                            <label for="textbox2160_x4">
+                                <span data-i18n="order2160_x4"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2160_text6"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2160_x5">
+                            <label for="textbox2160_x5">
+                                <span data-i18n="order2160_x5"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.65 -->
+                <tr class="row2165">
+                    <td class="check">
+                        <input type="checkbox" id="check2165">
+                        <label for="check2165">21.65</label>
+                    </td>
+
+                    <td class="opis2165" colspan="3">
+                        <b><span data-i18n="order2165_text1"></span></b>
+
+                        <span data-i18n="order2165_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2165_x1">
+                            <label for="textbox2165_x1">
+                                <span data-i18n="order2165_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2165_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2165_x2">
+                            <label for="textbox2165_x2">
+                                <span data-i18n="order2165_x2"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.70 -->
+                <tr class="row2170">
+                    <td class="check">
+                        <input type="checkbox" id="check2170">
+                        <label for="check2170">21.70</label>
+                    </td>
+
+                    <td class="opis2170" colspan="3">
+                        <b><span data-i18n="order2170_text1"></span></b>
+
+                        <span data-i18n="order2170_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2170_x1">
+                            <label for="textbox2170_x1">
+                                <span data-i18n="order2170_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2170_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2170_x2">
+                            <label for="textbox2170_x2">
+                                <span data-i18n="order2170_x2"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2170_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2170_x3">
+                            <label for="textbox2170_x3">
+                                <span data-i18n="order2170_x3"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <b>
+                            <span data-i18n="order2170_text5"></span>
+                        </b>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Prawa tabela -->
+    <div class="prawatabela">
+        <table>
+            <tbody>
+                <!-- 21.80 -->
+                <tr class="row2180">
+                    <td class="check">
+                        <input type="checkbox" id="check2180">
+                        <label for="check2180">21.80</label>
+                    </td>
+
+                    <td class="opis2180" colspan="3">
+                        <b><span data-i18n="order2180_text1"></span></b>
+
+                        <span data-i18n="order2180_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x1">
+                            <label for="textbox2180_x1">
+                                <span data-i18n="order2180_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2180_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x2">
+                            <label for="textbox2180_x2">
+                                <span data-i18n="order2180_x2"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <span data-i18n="order2180_text4"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x3">
+                            <label for="textbox2180_x3">
+                                <span data-i18n="order2180_x3"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2180_text5"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x4">
+                            <label for="textbox2180_x4">
+                                <span data-i18n="order2180_x4"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2180_text6"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2180_x5">
+                            <label for="textbox2180_x5">
+                                <span data-i18n="order2180_x5"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.81 -->
+                <tr class="row2181">
+                    <td class="check">
+                        <input type="checkbox" id="check2181">
+                        <label for="check2181">21.81</label>
+                    </td>
+
+                    <td class="opis2181" colspan="3">
+                        <b><span data-i18n="order2181_text1"></span></b>
+                    </td>
+                </tr>
+
+                <!-- 21.82 -->
+                <tr class="row2182">
+                    <td class="check">
+                        <input type="checkbox" id="check2182">
+                        <label for="check2182">21.82</label>
+                    </td>
+
+                    <td class="opis2182" colspan="3">
+                        <b><span data-i18n="order2182_text1"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2182_x1">
+                            <label for="textbox2182_x1">
+                                <span data-i18n="order2182_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2182_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2182_x2">
+                            <label for="textbox2182_x2">
+                                <span data-i18n="order2182_x2"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.83 -->
+                <tr class="row2183">
+                    <td class="check">
+                        <input type="checkbox" id="check2183">
+                        <label for="check2183">21.83</label>
+                    </td>
+
+                    <td class="opis2183" colspan="3">
+                        <b><span data-i18n="order2183_text1"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2183_x1">
+                            <label for="textbox2183_x1">
+                                <span data-i18n="order2183_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2183_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2183_x2">
+                            <label for="textbox2183_x2">
+                                <span data-i18n="order2183_x2"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 21.85 -->
+                <tr class="row2185">
+                    <td class="check">
+                        <input type="checkbox" id="check2185">
+                        <label for="check2185">21.85</label>
+                    </td>
+
+                    <td class="opis2185" colspan="3">
+                        <b><span data-i18n="order2185_text1"></span></b>
+
+                        <span data-i18n="order2185_text2"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x1">
+                            <label for="textbox2185_x1">
+                                <span data-i18n="order2185_x1"></span>
+                            </label>
+                        </span>
+
+                        <span data-i18n="order2185_text3"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x2">
+                            <label for="textbox2185_x2">
+                                <span data-i18n="order2185_x2"></span>
+                            </label>
+                        </span>
+
+                        <br>
+
+                        <span data-i18n="order2185_text4"></span>
+                        |
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x3">
+                            <label for="textbox2185_x3">
+                                <span data-i18n="order2185_x3"></span>
+                            </label>
+                        </span>
+                        |
+                        <span class="textbox">
+                            <input type="text" id="textbox2185_x4">
+                            <label for="textbox2185_x4">
+                                <span data-i18n="order2185_x4"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- 23.10 -->
+                <tr class="row2310">
+                    <td class="check">
+                        <input type="checkbox" id="check2310">
+                        <label for="check2310">23.10</label>
+                    </td>
+
+                    <td class="opis2310" colspan="3">
+                        <b><span data-i18n="order2310_text1"></span></b>
+
+                        <br><br>
+
+                        <b><span data-i18n="order2310_part1_title"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x1">
+                            <label for="textbox2310_x1"><span data-i18n="order2310_x1"></span></label>
+                        </span>
+
+                        <b>/</b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x2">
+                            <label for="textbox2310_x2"><span data-i18n="order2310_x2"></span></label>
+                        </span>
+
+                        <b><span data-i18n="order2310_tor"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x3">
+                            <label for="textbox2310_x3"><span data-i18n="order2310_x3"></span></label>
+                        </span>
+
+                        <br>
+
+                        V
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x4">
+                            <label for="textbox2310_x4"><span data-i18n="order2310_x4"></span></label>
+                        </span>
+
+                        <span data-i18n="order2310_od"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x5">
+                            <label for="textbox2310_x5"><span data-i18n="order2310_x5"></span></label>
+                        </span>
+
+                        <span data-i18n="order2310_do"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x6">
+                            <label for="textbox2310_x6"><span data-i18n="order2310_x6"></span></label>
+                        </span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x95">
+                            <label for="textbox2310_x95"><span data-i18n="order2310_x95"></span></label>
+                        </span>
+
+                        <br>
+
+                        <b><span data-i18n="order2310_part2_title"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x7">
+                            <label for="textbox2310_x7"><span data-i18n="order2310_x7"></span></label>
+                        </span>
+
+                        <b>/</b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x8">
+                            <label for="textbox2310_x8"><span data-i18n="order2310_x8"></span></label>
+                        </span>
+
+                        <b><span data-i18n="order2310_tor"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x9">
+                            <label for="textbox2310_x9"><span data-i18n="order2310_x9"></span></label>
+                        </span>
+
+                        <br>
+
+                        V
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x10">
+                            <label for="textbox2310_x10"><span data-i18n="order2310_x10"></span></label>
+                        </span>
+
+                        <span data-i18n="order2310_od"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x11">
+                            <label for="textbox2310_x11"><span data-i18n="order2310_x11"></span></label>
+                        </span>
+
+                        <span data-i18n="order2310_do"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x12">
+                            <label for="textbox2310_x12"><span data-i18n="order2310_x12"></span></label>
+                        </span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x96">
+                            <label for="textbox2310_x96"><span data-i18n="order2310_x96"></span></label>
+                        </span>
+
+                        <br>
+
+                        <b><span data-i18n="order2310_part3_title"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x13">
+                            <label for="textbox2310_x13"><span data-i18n="order2310_x13"></span></label>
+                        </span>
+
+                        <b>/</b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x14">
+                            <label for="textbox2310_x14"><span data-i18n="order2310_x14"></span></label>
+                        </span>
+
+                        <b><span data-i18n="order2310_tor"></span></b>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x15">
+                            <label for="textbox2310_x15"><span data-i18n="order2310_x15"></span></label>
+                        </span>
+
+                        <br>
+
+                        V
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x16">
+                            <label for="textbox2310_x16"><span data-i18n="order2310_x16"></span></label>
+                        </span>
+
+                        <span data-i18n="order2310_od"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x17">
+                            <label for="textbox2310_x17"><span data-i18n="order2310_x17"></span></label>
+                        </span>
+
+                        <span data-i18n="order2310_do"></span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x18">
+                            <label for="textbox2310_x18"><span data-i18n="order2310_x18"></span></label>
+                        </span>
+
+                        <span class="textbox">
+                            <input type="text" id="textbox2310_x97">
+                            <label for="textbox2310_x97"><span data-i18n="order2310_x97"></span></label>
+                        </span>
+
+                        <br><br>
+                    </td>
+                </tr>
+
+                <!-- 23.11 -->
+                <tr class="row2311">
+                    <td class="check">
+                        <input type="checkbox" id="check2311">
+                        <label for="check2311">23.11</label>
+                    </td>
+
+                    <td class="opis2311" colspan="3">
+                        <b><span data-i18n="order2311_text1"></span></b>
+                    </td>
+                </tr>
+
+                <!-- 23.20 -->
+                <tr class="row2320">
+                    <td class="check">
+                        <input type="checkbox" id="check2320">
+                        <label for="check2320">23.20</label>
+                    </td>
+
+                    <td class="opis2320" colspan="3">
+                        <span class="textbox">
+                            <textarea id="textbox2320_x96"></textarea>
+                            <label for="textbox2320_x96">
+                                <span data-i18n="order2320_x96"></span>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- Stopka rozkazu -->
+                <tr class="stopkaRozkazu">
+                    <!-- Numer pociągu -->
+                    <td class="duzyTekst" colspan="2">
+                        <input type="text" id="idMaszynisty" placeholder="Kowalski">
+                        <br>
+                        <b>V</b> <span data-i18n="orderFooter_V"></span>
+                    </td>
+                    <!-- Data -->
+                    <td class="date" colspan="2">
+                        <input type="text" id="idDyzurnego" placeholder="Nowak">
+                        <br>
+                        <b>W</b> <span data-i18n="orderFooter_W"></span>
+                    </td>
+                </tr>
+                <tr class="stopkaRozkazu">
+                    <!-- Lokalizacja -->
+                    <td class="lokalizacja" colspan="2">
+                        <input type="text" id="godzina" placeholder="12:45">
+                        <br>
+                        <b>Y</b> <span data-i18n="orderFooter_Y"></span>
+                        <button id="buttonGodzina" onclick="getCurrentTime()"><span data-i18n="orderFooter_TimeBtn"></span></button>
+                    </td>
+                    <!-- Lokalizacja nadawcy -->
+                    <td class="stacja" colspan="2">
+                        <input type="text" id="idRozkazu" placeholder="RD-001-000001-25">
+                        <br>
+                        <b>Z</b> <span data-i18n="orderFooter_Z"></span>
+                        <button id="buttonIDRozkazu" onclick="generateRozkazID()"><span data-i18n="orderFooter_NumBtn"></span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/generator.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

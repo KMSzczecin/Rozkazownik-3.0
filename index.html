@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <title>Rozkazownik 3.0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="media/img/favicon.ico">
+</head>
+<body>
+    <!-- Paskologocoś -->
+    <header class="topbar">
+        <a href="index.html" data-i18n-title="homepage">
+            <picture>
+                <source media="(max-width: 600px)" srcset="media/img/512.png">
+                <img src="media/img/baner.png" id="baner" alt="Rozkazownik 3.0">
+            </picture>
+            
+        </a>
+        <nav id="toolbar">
+            <div class="toolbarButton" id="languageChange" tabindex="0" data-i18n-title="changeLanguage">
+                <div class="buttonContent" id="languageChangeBtn">
+                    <img>
+                    <p>▼</p>
+                </div>
+                <div class="languageSelector">
+                    <div class="languageOption" id="langPL" title="Polski" onclick="loadLang('pl')">
+                        <img src="media/flags/pl.png">
+                    </div>
+                    <div class="languageOption" id="langEN" title="English" onclick="loadLang('en')">
+                        <img src="media/flags/en.png">
+                    </div>
+                </div>
+            </div>
+            <a href="oldReleases.html" title="Rozkazownik 2.0" tabindex="0" class="toolbarButton" id="oldVersion">
+                <img src="media/img/oldRozkazownik.png" alt="v. 2.0">
+            </a>
+            <div class="toolbarButton" id="refreshButton" tabindex="0" data-i18n-title="refresh">
+                <img src="media/img/refresh.png" alt="<-">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Główna zawartość -->
+    <main>
+        <!-- Okno z rozkazem z drugiego htmla -->
+        <section class="oknoGeneratora" id="oknoGeneratora">
+            <iframe src="rozkaz.html" class="iframeRozkaz" id="iframeRozkaz"></iframe>
+        </section>
+
+        <!-- Przyciski pod oknem z rozkazem -->
+        <div id="przyciski">
+            <button type="button" id="przyciskRozwijacza" onclick="higherIframe()" data-i18n="expandButton"></button>
+            <button type="button" id="przyciskGenerowania" onclick="makeItWork()" data-i18n="generateButton"></button>
+            <div class="toolbarButton" id="outputLanguageChange" tabindex="0" data-i18n-title="changeLanguage">
+                <div class="buttonContent" id="outputLanguageChangeBtn">
+                    <img src="media/flags/pl.png">
+                    <p>▼</p>
+                </div>
+                <div class="languageSelector">
+                    <div class="languageOption" id="langPL" title="Polski" onclick="outputLang('pl')">
+                        <img src="media/flags/pl.png">
+                    </div>
+                    <div class="languageOption" id="langEN" title="English" onclick="outputLang('en')">
+                        <img src="media/flags/en.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wygenerowany wynik-->
+        <section class="divWynikowy" id="divWynikowy"></section>
+    </main>
+
+    <!-- Stopka -->
+    <footer class="footer" id="footer">
+        <p><span data-i18n="help1"></span><a href="https://pitkowakolej.pl/rozkaz-pisemny-pl/" target="_blank" data-i18n="helpLink1"></a> <span data-i18n="help2"></span> <a href=https://td2.info.pl/dzial-trenerski/trenerska-pomoc-dla-poczatkujacych/ target="_blank" data-i18n="helpLink2"></a>!</p>
+        <p><b>Made with ❤️ by <span style="color: #00cc00;">KM</span><span style="color: #0088cc;">Szczecin</span> © 2026</b> | <a id="changelog" href="#" onclick="openChangelog(); return false;">v. 1.1</a></p>
+    </footer>
+
+    <!-- Alerty -->
+    <div id="overlay">
+        <div id="overlayWindow">
+            <div id="overlayMsg" style="margin-bottom: 20px; font-weight: 500;"></div>
+            <button id="overlayButton">OK</button>
+        </div>
+    </div>
+
+    <!-- Ładowanie skryptów -->
+    <script src="js/index.js"></script>
+    <script src="js/przetwarzator.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

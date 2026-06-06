@@ -1,0 +1,10 @@
+<b>Changelog - Order Generator 3.0</b><br>
+<br>
+<b>v. 1.1</b> - 06.06.2026<br>
+- added English translation system (for page content and generated orders)<br>
+- bug fixes<br>
+- added more safeguards against issuing incorrect orders<br>
+- changed PDF export system<br>
+<br>
+<b>v. 1.0</b> - 01.11.2025<br>
+- initial test release of the application<br>
