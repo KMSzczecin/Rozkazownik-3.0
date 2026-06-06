@@ -115,30 +115,20 @@ function showToast(message, duration = 2000) {
 var czyUzytyRozwijacz = false;
 
 function higherIframe() {
-    let przycisk = document.getElementById("przyciskRozwijacza");
+    const okno = document.getElementById("oknoGeneratora");
+    const przycisk = document.getElementById("przyciskRozwijacza");
 
-    if (czyUzytyRozwijacz == false) {
-        // Zamiana przycisków
-        czyUzytyRozwijacz = true;
-        przyciskRozwijacza.dataset.i18n = "shrinkButton";
-        applyLang(currentDict);
+    okno.classList.toggle("big");
 
-        // Zmiana rozmiaru okna na maksymalne
-        const oknoIframe = document.getElementById("iframeRozkaz");
-        oknoIframe.style.cssText = "width: 1580px; height: 1920px;";
-        document.body.style.minWidth = "1580px";
+    czyUzytyRozwijacz = okno.classList.contains("big");
+
+    if (czyUzytyRozwijacz) {
+        przycisk.dataset.i18n = "shrinkButton";
+    } else {
+        przycisk.dataset.i18n = "expandButton";
     }
-    else {
-        // Zamiana przycisków
-        czyUzytyRozwijacz = false;
-        przyciskRozwijacza.dataset.i18n = "expandButton";
-        applyLang(currentDict);
 
-        // Zmiana rozmiaru okna na oryginalne
-        const oknoIframe = document.getElementById("iframeRozkaz");
-        oknoIframe.style.cssText = "width: 90vw; height: 75vh;";
-        document.body.style.minWidth = "";
-    }
+    applyLang(currentDict);
 }
 
 

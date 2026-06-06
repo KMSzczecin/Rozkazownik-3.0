@@ -1,8 +1,8 @@
 {
     "index": {
         "generateButton": "📄 Wygeneruj rozkaz!",
-        "expandButton": "↕️ Rozwiń okno generatora do pełnego rozmiaru ↔️",
-        "shrinkButton": "↕️ Zwiń okno generatora do rozmiaru okna przeglądarki ↔️",
+        "expandButton": "↕️ Rozwiń okno generatora do pełnej wysokości",
+        "shrinkButton": "↕️ Zwiń okno generatora do domyślnej wysokości",
         
         "help1": "❓ Potrzebujesz pomocy w wypełnieniu rozkazu? ",
         "helpLink1": "Zerknij tutaj!",

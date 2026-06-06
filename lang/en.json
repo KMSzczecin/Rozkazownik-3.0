@@ -1,8 +1,8 @@
 {
     "index": {
         "generateButton": "📄 Generate order!",
-        "expandButton": "↕️ Expand the generator to order's full size ↔️",
-        "shrinkButton": "↕️ Shrink the generator to browser window's size ↔️",
+        "expandButton": "↕️ Expand the generator to full height",
+        "shrinkButton": "↕️ Shrink the generator to default height",
         
         "help1": "❓ Do you need help filling out the written order? ",
         "helpLink1": "Take a look here!",
