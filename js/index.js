@@ -18,8 +18,9 @@ window.addEventListener('resize', updateBodyPadding);
 // ==========
 
 document.getElementById("refreshButton").addEventListener("click", () => {
-    iframe?.contentWindow?.postMessage({ type: "lang", dict }, "*");
+    const iframe = document.getElementById("iframeRozkaz");
     iframe.contentWindow.location.reload();
+    syncIframeLang();
 });
 
 // ================
@@ -85,7 +86,6 @@ function customAlert(msg, type) {
 // =========================
 
 function showToast(message, duration = 2000) {
-    console.log("showToast called with:", message);
     let toast = document.getElementById("toast");
 
     // jeśli toast już istnieje, usuń go
@@ -135,22 +135,6 @@ function higherIframe() {
 // Zmiana języka generowanego rozkazu
 // ==================================
 
-function outputLang(lang, showNotification = true) {
-    localStorage.setItem("outputLang", lang);
-    document.getElementById("outputLanguageChangeBtn")
-        .querySelector("img").src = `media/flags/${lang}.png`;
-
-    loadOrderLang();
-
-    if (showNotification) {
-        showToast(tpage("outputLangChanged"), 3000);
-    }
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-    outputLang(localStorage.getItem("outputLang") || "pl", false);
-});
-
 
 // =============================
 // Kopiowanie rozkazu do schowka
@@ -184,7 +168,6 @@ function removeFormatting() {
         // Zamiana przycisków
         czyUzytyFormat = true;
         przycisk.dataset.i18n = "restoreFormattingButton";
-        applyLang(currentDict);
         let sformatowanyRozkaz = gotowyRozkaz;
         sformatowanyRozkaz = sformatowanyRozkaz.replace(/<\/?(b|u)>/g, "");
         textbox.value = sformatowanyRozkaz;
@@ -194,7 +177,6 @@ function removeFormatting() {
         // Zamiana przycisków
         czyUzytyFormat = false;
         przycisk.dataset.i18n = "removeFormattingButton";
-        applyLang(currentDict);
         textbox.value = gotowyRozkaz;
         showToast(tpage("formattingRestored"), 2000);
     }

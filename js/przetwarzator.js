@@ -5,7 +5,6 @@ var gotowyRozkaz, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x
 
 function makeItWork() {
     // Zastosowanie języka i sprzątanie po poprzednim rozkazie
-    loadOrderLang();
     czyUzytyFormat = false;
 
     // Zmienna przechowująca rozkaz
@@ -611,15 +610,14 @@ function makeItWork() {
         <textarea disabled id="poleNaWynik"></textarea>
     </div>
 
-    <div id="przyciski">
+    <div id="przyciski" class="teSzerokie">
         <button type="button" id="przyciskKopiowania" onclick="copyToClipboard()"><span data-i18n="copyButton"></span></button>
         <button type="button" id="przyciskUsunieciaFormatowania" onclick="removeFormatting()"><span data-i18n="removeFormattingButton"></span></button>
         <button type="button" id="przyciskZapisuPDF" onclick="exportPDF()"><span data-i18n="saveButton"></span></button>
     </div>
     `;
     document.getElementById("divWynikowy").innerHTML = divWynikowy;
-
-    applyLang(currentDict);
+    applyUI();
 
     // Wysyłanie zmiennej z rozkazem do textboxa
     const textbox = document.getElementById("poleNaWynik");

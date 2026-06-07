@@ -141,40 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
 // Tłumaczenie, odbiór!
 // ====================
 
-let currentDict = {};
-
-window.addEventListener("DOMContentLoaded", async () => {
-    let lang = localStorage.getItem("outputLang");
-
-    if (!lang) {
-        lang = "pl";
-        localStorage.setItem("outputLang", lang);
-    }
-
-    const res = await fetch(`./lang/${lang}.json`);
-    const dict = await res.json();
-
-    currentDict = flattenTranslations(dict);
-
-    applyLang(currentDict);
-});
+let uiDict = {};
 
 window.addEventListener("message", (e) => {
     if (e.data?.type !== "lang") return;
 
-    currentDict = e.data.dict;
+    uiDict = e.data.dict;
+    applyUI();
+});
 
+function applyUI() {
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.dataset.i18n;
-        if (currentDict[key]) el.innerHTML = currentDict[key];
+        if (uiDict[key]) el.innerHTML = uiDict[key];
     });
 
     document.querySelectorAll("[data-i18n-title]").forEach(el => {
         const key = el.dataset.i18nTitle;
-        if (currentDict[key]) el.title = currentDict[key];
+        if (uiDict[key]) el.title = uiDict[key];
     });
-});
-
-function tpage(key, fallback = "") {
-    return currentDict[key] ?? fallback ?? key;
 }

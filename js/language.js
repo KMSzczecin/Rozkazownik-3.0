@@ -1,67 +1,103 @@
-let currentDict = {};
+// ========
+// Słowniki
+// ========
+
+let uiDict = {};
 let orderDict = {};
 
-async function loadLang(lang) {
-    const res = await fetch(`./lang/${lang}.json`);
-    let dict = await res.json();
+// =================
+// Płaszczenie jsona
+// =================
 
-    dict = flattenTranslations(dict);
+function flattenTranslations(obj) {
+    const out = {};
+    (function walk(o) {
+        for (const k in o) {
+            if (typeof o[k] === "object") walk(o[k]);
+            else out[k] = o[k];
+        }
+    })(obj);
+    return out;
+}
 
-    currentDict = dict;
+// =====================
+// Wczytywanie słowników
+// =====================
 
-    localStorage.setItem("lang", lang);
-
-    applyLang(dict);
-
+async function loadUI(lang) {
+    const res = await fetch(`lang/${lang}.json`);
+    uiDict = flattenTranslations(await res.json());
     document.getElementById("languageChangeBtn").querySelector("img").src = `media/flags/${lang}.png`;
-
-    const iframe = document.getElementById("iframeRozkaz");
-    iframe?.contentWindow?.postMessage({ type: "lang", dict }, "*");
+    applyUI();
 }
 
-async function loadOrderLang() {
-    const orderOutputLang = localStorage.getItem("outputLang") || "pl";
-
-    const res = await fetch(`./lang/${orderOutputLang}.json`);
-    orderDict = await res.json();
-
-    orderDict = flattenTranslations(orderDict);
+async function loadOrder(lang) {
+    const res = await fetch(`lang/${lang}.json`);
+    orderDict = flattenTranslations(await res.json());
+    document.getElementById("outputLanguageChangeBtn").querySelector("img").src = `media/flags/${lang}.png`;
 }
+
+function applyUI() {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (uiDict[key]) el.innerHTML = uiDict[key];
+    });
+
+    document.querySelectorAll("[data-i18n-title]").forEach(el => {
+        const key = el.dataset.i18nTitle;
+        if (uiDict[key]) el.title = uiDict[key];
+    });
+}
+
+// ======================
+// Funkcje przetwarzatora
+// ======================
 
 function t(key, fallback = "") {
     return orderDict[key] ?? fallback ?? key;
 }
 
 function tpage(key, fallback = "") {
-    return currentDict[key] ?? fallback ?? key;
+    return uiDict[key] ?? fallback ?? key;
 }
 
-function applyLang(dict) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.dataset.i18n;
-        if (dict[key]) el.innerHTML = dict[key];
-    });
+// =======
+// Starter
+// =======
+(async function init() {
+    await loadUI(localStorage.getItem("lang") || "pl");
+    await loadOrder(localStorage.getItem("outputLang") || "pl");
+    syncIframeLang();
+})();
 
-    document.querySelectorAll("[data-i18n-title]").forEach(el => {
-        const key = el.dataset.i18nTitle;
-        if (dict[key]) el.title = dict[key];
-    });
+// ===================
+// Zmiana języków w UI
+// ===================
+
+async function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    await loadUI(lang);
+    syncIframeLang();
 }
 
-function flattenTranslations(obj) {
-    const out = {};
-
-    function walk(o) {
-        for (const k in o) {
-            if (typeof o[k] === "object") walk(o[k]);
-            else out[k] = o[k];
-        }
-    }
-
-    walk(obj);
-    return out;
+async function setOrderLang(lang) {
+    localStorage.setItem("outputLang", lang);
+    await loadOrder(lang);
+    showToast(tpage("outputLangChanged"), 3000)
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    loadLang(localStorage.getItem("lang") || "pl");
-});
+// ===========
+// iframe sync
+// ===========
+
+async function syncIframeLang() {
+    const lang = localStorage.getItem("lang") || "pl";
+
+    const res = await fetch(`lang/${lang}.json`);
+    const dict = await res.json();
+
+    iframe?.contentWindow?.postMessage({
+        type: "lang",
+        dict: flattenTranslations(dict)
+    }, "*");
+}
