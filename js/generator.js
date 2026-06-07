@@ -148,7 +148,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     if (!lang) {
         lang = "pl";
-        localStorage.setItem("lang", lang);
+        localStorage.setItem("outputLang", lang);
     }
 
     const res = await fetch(`./lang/${lang}.json`);
@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 window.addEventListener("message", (e) => {
     if (e.data?.type !== "lang") return;
 
-    currentDict = e.data.dict; // 🔥 TO JEST KLUCZ
+    currentDict = e.data.dict;
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.dataset.i18n;
