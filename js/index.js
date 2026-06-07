@@ -19,8 +19,15 @@ window.addEventListener('resize', updateBodyPadding);
 
 document.getElementById("refreshButton").addEventListener("click", () => {
     const iframe = document.getElementById("iframeRozkaz");
+
+    // ustaw handler na jedno ładowanie
+    iframe.addEventListener("load", function onLoad() {
+        iframe.removeEventListener("load", onLoad);
+
+        syncIframeLang();
+    });
+
     iframe.contentWindow.location.reload();
-    syncIframeLang();
 });
 
 // ================
