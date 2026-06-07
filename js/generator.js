@@ -143,12 +143,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let currentDict = {};
 
-(async () => {
+window.addEventListener("DOMContentLoaded", async () => {
     let lang = localStorage.getItem("outputLang");
 
     if (!lang) {
         lang = "pl";
-        localStorage.setItem("outputLang", lang);
+        localStorage.setItem("lang", lang);
     }
 
     const res = await fetch(`./lang/${lang}.json`);
@@ -157,7 +157,7 @@ let currentDict = {};
     currentDict = flattenTranslations(dict);
 
     applyLang(currentDict);
-})();
+});
 
 window.addEventListener("message", (e) => {
     if (e.data?.type !== "lang") return;

@@ -20,7 +20,6 @@ window.addEventListener('resize', updateBodyPadding);
 document.getElementById("refreshButton").addEventListener("click", () => {
     const iframe = document.getElementById("iframeRozkaz");
     iframe.src = iframe.src;
-    loadLang(localStorage.getItem("lang") || "pl");
 });
 
 // ================
