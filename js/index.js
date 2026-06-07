@@ -19,7 +19,7 @@ window.addEventListener('resize', updateBodyPadding);
 
 document.getElementById("refreshButton").addEventListener("click", () => {
     iframe.contentWindow.location.reload();
-    loadLang(localStorage.getItem("lang") || "pl");
+    iframe?.contentWindow?.postMessage({ type: "lang", dict }, "*");
 });
 
 // ================
