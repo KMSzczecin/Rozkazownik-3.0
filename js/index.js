@@ -18,8 +18,8 @@ window.addEventListener('resize', updateBodyPadding);
 // ==========
 
 document.getElementById("refreshButton").addEventListener("click", () => {
-    iframe.contentWindow.location.reload();
     iframe?.contentWindow?.postMessage({ type: "lang", dict }, "*");
+    iframe.contentWindow.location.reload();
 });
 
 // ================
