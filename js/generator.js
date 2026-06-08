@@ -160,9 +160,8 @@ function applyUI() {
         const key = el.dataset.i18nTitle;
         if (uiDict[key]) el.title = uiDict[key];
     });
+}
 
-    function tpage(key, fallback = "") {
-        return uiDict[key] ?? fallback ?? key;
-    }
-
+function tpage(key, fallback = "") {
+    return uiDict[key] ?? fallback ?? key;
 }
