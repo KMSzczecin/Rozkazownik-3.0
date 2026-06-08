@@ -1,4 +1,4 @@
-<b>Changelog - Order Generator 3.0</b><br>
+<b>Changelog - Rozkazownik 3.0</b><br>
 <br>
 <b>v. 1.1</b> - 06.06.2026<br>
 - added English translation system (for page content and generated orders)<br>
