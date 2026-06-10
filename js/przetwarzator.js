@@ -594,10 +594,10 @@ function makeItWork() {
     }
 
     gotowyRozkaz += 
-        "<b>V " + t("orderFooter_V") + "</b> " + rozkazFooter.idMaszynisty + "\n" +
-        "<b>W " + t("orderFooter_W") + "</b> " + rozkazFooter.idDyzurnego + "\n" +
-        "<b>Y " + t("orderFooter_Y") + "</b> " + rozkazFooter.godzina + "\n" +
-        "<b>Z " + t("orderFooter_Z") + "</b> " + rozkazFooter.idRozkazu;
+        "<b>V " + t("orderFooter_V") + ":</b> " + rozkazFooter.idMaszynisty + "\n" +
+        "<b>W " + t("orderFooter_W") + ":</b> " + rozkazFooter.idDyzurnego + "\n" +
+        "<b>Y " + t("orderFooter_Y") + ":</b> " + rozkazFooter.godzina + "\n" +
+        "<b>Z " + t("orderFooter_Z") + ":</b> " + rozkazFooter.idRozkazu;
 
     // Dodawanie elementów do strony
     const divWynikowy = `
