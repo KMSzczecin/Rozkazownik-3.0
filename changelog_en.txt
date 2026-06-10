@@ -4,7 +4,7 @@
 - added English translation system (for page content and generated orders)<br>
 - bug fixes<br>
 - added more safeguards against issuing incorrect orders<br>
-- changed PDF export system<br>
+- changed the export file extension to PDF<br>
 <br>
 <b>v. 1.0</b> - 01.11.2025<br>
 - initial test release of the application<br>
