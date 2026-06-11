@@ -1,5 +1,9 @@
 <b>Changelog - Rozkazownik 3.0</b><br>
 <br>
+<b>v. 1.1a</b> - 11.06.2026<br>
+- poprawki małych błędów<br>
+- dodanie tłumaczenia na język czeski (dziękuję <b>td2czech</b>!)<br>
+<br>
 <b>v. 1.1</b> - 06.06.2026<br>
 - dodanie systemu tłumaczeń na język angielski (dla treści strony i generowanych rozkazów)<br>
 - poprawki błędów<br>

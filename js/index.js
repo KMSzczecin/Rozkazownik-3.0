@@ -134,13 +134,8 @@ function higherIframe() {
         przycisk.dataset.i18n = "expandButton";
     }
 
-    applyLang(currentDict);
+    applyUI();
 }
-
-
-// ==================================
-// Zmiana języka generowanego rozkazu
-// ==================================
 
 
 // =============================
@@ -187,6 +182,8 @@ function removeFormatting() {
         textbox.value = gotowyRozkaz;
         showToast(tpage("formattingRestored"), 2000);
     }
+
+    applyUI();
 }
 
 // ============
