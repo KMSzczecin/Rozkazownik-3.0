@@ -205,30 +205,26 @@ function exportPDF() {
 // Wczytywanie changeloga
 // ======================
 
-function openChangelog() {
-    let setLang = localStorage.getItem("lang");
-    let changelogName = "changelog.txt";
+async function openChangelog() {
+    const lang = localStorage.getItem("lang") || "pl";
 
-    if (setLang === "pl") {
-        changelogName = "changelog.txt";
+    const primary = `changelog_${lang}.txt`;
+    const fallback = "changelog_en.txt";
+
+    let res = await fetch(primary, { cache: "no-store" });
+
+    if (!res.ok) {
+        res = await fetch(fallback, { cache: "no-store" });
     }
 
-    if (setLang === "en") {
-        changelogName = "changelog_en.txt";
+    if (!res.ok) {
+        console.log("Brak changeloga");
+        customAlert(tpage("failedChangelogLoad"), "error");
+        return;
     }
 
-    fetch(changelogName, { cache: "no-store" })
-        .then(response => {
-            if (!response.ok) throw new Error("Nie udało się wczytać changeloga");
-            return response.text();
-        })
-        .then(text => {
-            customAlert(text, "changelog");
-        })
-        .catch(err => {
-            console.log("Błąd podczas wczytywania changeloga: " + err.message);
-            customAlert(tpage("failedChangelogLoad"), "error");
-        });
+    const text = await res.text();
+    customAlert(text, "changelog");
 }
 
 // ======================
@@ -240,7 +236,7 @@ let typed = "";
 
 // funkcja pokazująca obrazek
 function showBojek() {
-    customAlert("<img src='media/img/bojek.png' style='max-height: 75vh; max-width: 360px';>", "changelog");
+    customAlert("<img src='media/img/bojek.png' style='max-height: 60vh; max-width: 360px';>", "changelog");
 }
 
 // sprawdzenie wpisanych znaków

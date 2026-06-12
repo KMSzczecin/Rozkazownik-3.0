@@ -157,7 +157,7 @@ function makeItWork() {
         if (x6 !== "") pomijaneSygnaly.push(x6);
 
         if (pomijaneSygnaly.length > 0) {
-            gotowyRozkaz += "</b>\n" + t("order2115_text5") + " <b>" + pomijaneSygnaly.join("</b>" + t("order2115_text6") + " <b>");
+            gotowyRozkaz += "</b>\n" + t("order2115_text5") + " <b>" + pomijaneSygnaly.join("</b> " + t("order2115_text6") + " <b>");
         }
 
         gotowyRozkaz += "</b>\n\n";
