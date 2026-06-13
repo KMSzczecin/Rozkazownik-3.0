@@ -29,7 +29,7 @@
         "orderHeader_A": "A Zugnummer | Rangiernummer",
         "orderHeader_B": "B Datum",
         "orderHeader_C": "C Standort des Zuges | Rangierer",
-        "orderHeader_D": "D Standord des Senders",
+        "orderHeader_D": "D Standort des Senders",
         "orderHeader_DateBtn": "📅 Akt. Datum eintragen",
         
         "order22_text1": "Gilt für Falschfahrten",
@@ -38,13 +38,13 @@
         "order99_x1": "x.1 identifikator des Befehls",
 
         "order2110_text1": "Abfahrtsauftrag",
-        "order2110_text2": "von Gleis nr.",
+        "order2110_text2": "von Gleis ",
         "order2110_x1": "x.1 Gleis",
         "order2110_text3": "von",
         "order2110_x2": "x.2 Bf",
-        "order2110_text4": "nach Gleis nr.",
+        "order2110_text4": "nach Gleis ",
         "order2110_x3": "x.3 Gleis",
-        "order2110_text5": "Richtung",
+        "order2110_text5": "in Richtung",
         "order2110_x4": "x.4 Bf",
         "order2110_text6": "Über Hp0 an Sig.",
         "order2110_x5": "x.5 Signal",
@@ -54,11 +54,11 @@
         "order2110_x7": "x.7 Signal",
 
         "order2115_text1": "Einfahrtauftrag",
-        "order2115_text2": "von Gleis nr.",
+        "order2115_text2": "von Gleis ",
         "order2115_x1": "x.1 Gleis",
         "order2115_text3": "nach",
         "order2115_x2": "x.2 Bf",
-        "order2115_text4": "nach Gleis nr.",
+        "order2115_text4": "nach Gleis ",
         "order2115_x3": "x.3 Gleis",
         "order2115_text5": "Passieren von Sig.",
         "order2115_x4": "x.4 Signal",
@@ -87,9 +87,9 @@
         "order2125_x4": "x.4 Zeit",
 
         "order2135_text1": "Weiterfahrtserlaubnis",
-        "order2135_text2": "auf Gleis nr.",
+        "order2135_text2": "auf Gleis ",
         "order2135_x1": "x.1 Gleis",
-        "order2135_text3": "richtung",
+        "order2135_text3": "in Richtung",
         "order2135_x2": "x.2 Bf",
 
         "order2140_text1": "Zug anhalten",
@@ -155,9 +155,9 @@
         "order2180_text1": "Befehl in das Gesperrte Gleis",
         "order2180_text2": "nr.",
         "order2180_x1": "x.1 Gleis",
-        "order2180_text3": "richtung",
+        "order2180_text3": "in Richtung",
         "order2180_x2": "x.2 Bf",
-        "order2180_text4": "nach km",
+        "order2180_text4": " bis nach km",
         "order2180_x3": "x.3 km",
         "order2180_text5": "rückfahrt nach",
         "order2180_x4": "x.4 Bf",
@@ -177,7 +177,7 @@
         "order2183_x2": "x.2 km",
 
         "order2185_text1": "Aufstellen des Zweiwegefahrzeugs erlaubt",
-        "order2185_text2": "auf Gleis nr.",
+        "order2185_text2": "auf Gleis ",
         "order2185_x1": "x.1 Gleis",
         "order2185_text3": "bei km",
         "order2185_x2": "x.2 km",
@@ -216,7 +216,7 @@
 
         "order2311_text1": "Warnsignal geben",
 
-        "order2320_x96": "x.96 andere",
+        "order2320_x96": "x.96 Andere",
 
         "orderFooter_V": "Tf-ID",
         "orderFooter_W": "Sender ID",
