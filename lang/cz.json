@@ -77,7 +77,7 @@
         "order2120_text5": "Zachovejte zvýšenou pozornost od návěstidla s návěstí",
         "order2120_text6": "W18.",
 
-        "order2125_text1": "Povoluji jízdu za (návěst W5/poslední výhybku) ve směru",
+        "order2125_text1": "Jeďte za (návěst W5/krajní výhybku) ve směru",
         "order2125_x1": "x.1 dopravna",
         "order2125_text2": "po koleji",
         "order2125_x2": "x.2 kolej",
@@ -113,7 +113,7 @@
         "order2150_x1": "x.1 dopravna",
         "order2150_text3": "/",
         "order2150_x2": "x.2 dopravna",
-        "order2150_text4": "vztahujících se k přejezdu v km",
+        "order2150_text4": "příslušných pro přejezd v km",
         "order2150_x3": "x.3 km",
         "order2150_text5": "jsou neplatné. Jeďte rychlostí uvedenou v jízdním řádu.",
 
@@ -122,7 +122,7 @@
         "order2155_x1": "x.1 dopravna",
         "order2155_text3": "|",
         "order2155_x2": "x.2 dopravna",
-        "order2155_text4": "vztahující se k návěstidlu",
+        "order2155_text4": "příslušný k návěstidlu",
         "order2155_x3": "x.3 návěstidlo",
 
         "order2160_text1": "Změna trasy",
