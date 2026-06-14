@@ -1,5 +1,8 @@
 <b>Changelog - Rozkazownik 3.0</b><br>
 <br>
+<b>v. 1.1c</b> - 14.06.2026<br>
+- added Russian translation (thanks to <b>Tankict_zapasa</b>!)<br>
+<br>
 <b>v. 1.1b</b> - 13.06.2026<br>
 - small bugfixes<br>
 - added German translation (thanks to <b>Siemensarchology212312</b>!)<br>

@@ -105,7 +105,7 @@ body {
 
 /* Dla języka rozkazu */
 #przyciski .toolbarButton .languageSelector {
-    top: -175%;
+    top: -275%;
     left: 100%; /* wyrównanie do prawej krawędzi przycisku */
 }
 

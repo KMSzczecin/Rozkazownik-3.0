@@ -9,7 +9,7 @@ function getCurrentDate() {
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
 
-    const data = `${day}.${month}.${year}` + "r";
+    const data = `${day}.${month}.${year}`;
 
     // Wszczepienie daty w generator
     const poleDaty = document.getElementById("data");
