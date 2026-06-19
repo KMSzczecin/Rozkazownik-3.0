@@ -1,7 +1,7 @@
 // ===================
 // Generowanie rozkazu
 // ===================
-var gotowyRozkaz, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x95, x96, x97, x42180;
+var gotowyRozkaz, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x91, x92, x93, x96, x42180;
 
 function makeItWork() {
     // Zastosowanie języka i sprzątanie po poprzednim rozkazie
@@ -315,12 +315,16 @@ function makeItWork() {
         x4 = generator.getElementById("textbox2160_x4").value.trim();
         x5 = generator.getElementById("textbox2160_x5").value.trim();
 
+        if (x5 == "") {
+            x5 = "............";
+        }
+
         gotowyRozkaz += "<b>21.60</b>" +
                         "\n<b>" + t("order2160_text1") + "</b> " + t("order2160_text2") + " <b>" + x1 + "</b> " + t("order2160_text3") + " <b>" + x2 + "</b>" + 
                         "\n" + t("order2160_text4") + " <b>" + x3 + "</b> " + t("order2160_text5") + " <b>" + x4 + "</b> " + t("order2160_text6") + " <b>" + x5 + " km/h</b>\n\n";
 
         // Sprawdzenie, czy nie ma pustych pól
-        if (x1 == "" || x2 == "" || x3 == "" || x4 == "" || x5 == "") {
+        if (x1 == "" || x2 == "" || x3 == "" || x4 == "") {
             customAlert(tpage("fillAllFieldsError") + "21.60!", "error");
             return 0;
         }
@@ -463,9 +467,9 @@ function makeItWork() {
                 eval(`x${i} = el.value.trim()`);
             }
         }
-        x95 = generator.getElementById("textbox2310_x95").value.trim();
-        x96 = generator.getElementById("textbox2310_x96").value.trim();
-        x97 = generator.getElementById("textbox2310_x97").value.trim();
+        x91 = generator.getElementById("textbox2310_x91").value.trim();
+        x92 = generator.getElementById("textbox2310_x92").value.trim();
+        x93 = generator.getElementById("textbox2310_x93").value.trim();
 
         // Sprawdź, czy druga lub trzecia działka nie została wypełniona przy pustej pierwszej
         let othersFilled = false;
@@ -476,14 +480,13 @@ function makeItWork() {
             }
         }
 
-        if ((x1 === "" && x2 === "" && x3 === "" && x4 === "" && x5 === "" && x6 === "" && x95 === "") 
-            && (othersFilled || x96 !== "" || x97 !== "")) {
+        if ((x1 === "" && x2 === "" && x3 === "" && x4 === "" && x5 === "" && x6 === "" && x91 === "") && (othersFilled || x92 !== "" || x93 !== "")) {
             customAlert(tpage("fill1stWarningError"), "error");
             return 0;
         }
 
         // Sprawdź, czy wszystkie części 1. punktu są uzupełnione
-        if (x1 == "" && x2 == "" || x3 == "" || x4 == "" || x5 == "" || x6 == "" || x95 == "") {
+        if (x1 == "" && x2 == "" || x3 == "" || x4 == "" || x5 == "" || x6 == "" || x91 == "") {
             customAlert(tpage("fillWhole1stWarningError"), "error");
             return 0;
         }
@@ -496,13 +499,13 @@ function makeItWork() {
         gotowyRozkaz += "<b>23.10</b>" +
                         "\n<b>" + t("order2310_text1") + "</b>" +
                         "\n\n<b>" + t("order2310_part1_title") + " " + x1 + x2 + ", " + t("order2310_tor") + " " + x3 + "</b>" +
-                        "\nV <b>" + x4 + " km/h</b> " + t("order2310_od") + " km <b>" + x5 + "</b> " + t("order2310_do") + " km <b>" + x6 + "</b> - " + x95 + "\n\n";
+                        "\nV <b>" + x4 + " km/h</b> " + t("order2310_od") + " km <b>" + x5 + "</b> " + t("order2310_do") + " km <b>" + x6 + "</b> - " + x91 + "\n\n";
         
         // Sprawdź, czy któraś część 2. punktu jest uzupełniona
-        if (x7 !== "" || x8 !== "" || x9 !== "" || x10 !== "" || x11 !== "" || x12 !== "" || x96 !== "") {
+        if (x7 !== "" || x8 !== "" || x9 !== "" || x10 !== "" || x11 !== "" || x12 !== "" || x92 !== "") {
             secondWarningStarted = true;
             // Sprawdź, czy któreś pole jest puste
-            if (x7 == "" && x8 == "" || x9 == "" || x10 == "" || x11 == "" || x12 == "" || x96 == "") {
+            if (x7 == "" && x8 == "" || x9 == "" || x10 == "" || x11 == "" || x12 == "" || x92 == "") {
                 customAlert(tpage("fillWhole2ndWarningError"), "error");
                 return 0;
             }
@@ -512,11 +515,11 @@ function makeItWork() {
                 x7 += " / "
             }
             gotowyRozkaz += "<b>" + t("order2310_part2_title") + " " + x7 + x8 + ", " + t("order2310_tor") + " " + x9 + "</b>" +
-                        "\nV <b>" + x10 + " km/h</b> " + t("order2310_od") + " km <b>" + x11 + "</b> " + t("order2310_do") + " km <b>" + x12 + "</b> - " + x96 + "\n\n";
+                        "\nV <b>" + x10 + " km/h</b> " + t("order2310_od") + " km <b>" + x11 + "</b> " + t("order2310_do") + " km <b>" + x12 + "</b> - " + x92 + "\n\n";
         }
 
         // Sprawdź, czy któraś część 3. punktu jest uzupełniona
-        if (x13 !== "" || x14 !== "" || x15 !== "" || x16 !== "" || x17 !== "" || x18 !== "" || x97 !== "") {
+        if (x13 !== "" || x14 !== "" || x15 !== "" || x16 !== "" || x17 !== "" || x18 !== "" || x93 !== "") {
             // Sprawdź, czy druga działka została ruszona
             if (secondWarningStarted == false) {
                 customAlert(tpage("fill2ndWarningError"), "error");
@@ -524,7 +527,7 @@ function makeItWork() {
             }
 
             // Sprawdź, czy któreś pole jest puste
-            if (x13 === "" && x14 === "" || x15 === "" || x16 === "" || x17 === "" || x18 === "" || x97 === "") {
+            if (x13 === "" && x14 === "" || x15 === "" || x16 === "" || x17 === "" || x18 === "" || x93 === "") {
                 customAlert(tpage("fillWhole3rdWarningError"), "error");
                 return 0;
             }
@@ -534,7 +537,7 @@ function makeItWork() {
                 x13 += " / "
             }
             gotowyRozkaz += "<b>" + t("order2310_part3_title") + " " + x13 + x14 + ", " + t("order2310_tor") + " " + x15 + "</b>" +
-                            "\nV <b>" + x16 + " km/h</b> " + t("order2310_od") + " km <b>" + x17 + "</b> " + t("order2310_do") + " km <b>" + x18 + "</b> - " + x97 + "\n\n";
+                            "\nV <b>" + x16 + " km/h</b> " + t("order2310_od") + " km <b>" + x17 + "</b> " + t("order2310_do") + " km <b>" + x18 + "</b> - " + x93 + "\n\n";
         }
     }
 

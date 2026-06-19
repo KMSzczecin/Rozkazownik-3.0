@@ -1,7 +1,7 @@
 {
     "index": {
-        "generateButton": "📄 Befehl Generieren!",
-        "expandButton": "↕️ Generator Vollständig erweitern",
+        "generateButton": "📄 Befehl generieren!",
+        "expandButton": "↕️ Generator vollständig erweitern",
         "shrinkButton": "↕️ Generator verkleinern",
         
         "help1": "❓ Brauchst du Hilfe, den Befehl auszufüllen? ",
@@ -10,7 +10,7 @@
         "helpLink2": "ein Training an",
 
         "homepage": "Startseite",
-        "changeLanguage": "Sprache Wechseln",
+        "changeLanguage": "Sprache wechseln",
         "refresh": "Seite mit Befehl aktualisieren"
     },
 
@@ -18,9 +18,9 @@
         "outputLangChanged": "Die Sprache des Befehls wurde geändert.",
         "orderCopied": "Der Befehl wurde in die Zwischenlage Kopiert!",
         "formattingRemoved": "Formatierung wurde versteckt.",
-        "formattingRestored": "Formattierung wiederhergestellt.",
-        "savedAsPDF": "Das System öffnet den Drucker-Tab in kürze. Wähle einen Drucker oder \"Speichern als PDF\" Option um die Datei zu speichern.",
-        "failedChangelogLoad": "Laden des Changelogs fehlgeschlagen. Versuche bitte später."
+        "formattingRestored": "Formatierung wiederhergestellt.",
+        "savedAsPDF": "Das System öffnet den Drucker-Tab. Wähle einen Drucker oder \"Speichern als PDF\" Option um die Datei zu speichern.",
+        "failedChangelogLoad": "Laden des Changelogs fehlgeschlagen. Versuche es später erneut."
     },
 
     "order": {
@@ -29,10 +29,10 @@
         "orderHeader_A": "A Zugnummer | Rangiernummer",
         "orderHeader_B": "B Datum",
         "orderHeader_C": "C Standort des Zuges | Rangierer",
-        "orderHeader_D": "D Standort des Senders",
+        "orderHeader_D": "D Standort des Ausstellers",
         "orderHeader_DateBtn": "📅 Akt. Datum eintragen",
         
-        "order22_text1": "Gilt für Falschfahrten",
+        "order22_text1": "Gilt für Linksverkehr",
 
         "order99_text1": "Befehl zurücknehmen",
         "order99_x1": "x.1 identifikator des Befehls",
@@ -46,7 +46,7 @@
         "order2110_x3": "x.3 Gleis",
         "order2110_text5": "in Richtung",
         "order2110_x4": "x.4 Bf",
-        "order2110_text6": "Über Hp0 an Sig.",
+        "order2110_text6": "Vorbeifahrt am Signal",
         "order2110_x5": "x.5 Signal",
         "order2110_text7": "und",
         "order2110_x6": "x.6 Signal",
@@ -60,7 +60,7 @@
         "order2115_x2": "x.2 Bf",
         "order2115_text4": "nach Gleis ",
         "order2115_x3": "x.3 Gleis",
-        "order2115_text5": "Passieren von Sig.",
+        "order2115_text5": "Vorbeifahrt am Signal",
         "order2115_x4": "x.4 Signal",
         "order2115_text6": "und",
         "order2115_x5": "x.5 Signal",
@@ -73,11 +73,11 @@
         "order2120_x2": "x.2 Bf",
         "order2120_text3": "über Gleis",
         "order2120_x3": "x.3 Gleis",
-        "order2120_text4": "Streckenblocksignale nicht beachten.",
-        "order2120_text5": "Fahrt mit Vorsicht ab Signal mit Zs",
+        "order2120_text4": "Signale der automatischen Blocksteuerung (SBL) sind zu ignorieren",
+        "order2120_text5": "Sei wachsam nach Passieren des Signals mit Kennzeichen ",
         "order2120_text6": "W18.",
 
-        "order2125_text1": "Weiterfahrt nach (Zs W5 / letzte Weiche) in Richtung",
+        "order2125_text1": "Weiterfahrt nach (W5 / letzte Weiche) in Richtung",
         "order2125_x1": "x.1 Bf",
         "order2125_text2": "auf Gleis",
         "order2125_x2": "x.2 Gleis",
@@ -86,7 +86,7 @@
         "order2125_text4": "bis",
         "order2125_x4": "x.4 Zeit",
 
-        "order2135_text1": "Weiterfahrtserlaubnis",
+        "order2135_text1": "Darf weiterfahren ",
         "order2135_text2": "auf Gleis ",
         "order2135_x1": "x.1 Gleis",
         "order2135_text3": "in Richtung",
@@ -102,23 +102,23 @@
         "order2140_text5": "aufgrund",
         "order2140_x96": "x.96 andere",
 
-        "order2145_text1": "Am",
+        "order2145_text1": "In",
         "order2145_x1": "x.1 Bf",
-        "order2145_text2": "an Signal",
+        "order2145_text2": "ist das Signal",
         "order2145_x2": "x.2 Signal",
-        "order2145_text3": "Permissivsignal fehlerhaft, keine Weiterfahrt ab Signal.",
+        "order2145_text3": "ungültig. Halte den Zug vor diesem Signal an.",
 
-        "order2150_text1": "Vorsignal",
-        "order2150_text2": "für den BÜ am Bf/Strecke",
+        "order2150_text1": "Vorfahrsignale (TOP) am Bahnübergang",
+        "order2150_text2": "an Posten/Strecke",
         "order2150_x1": "x.1 Bf",
         "order2150_text3": "/",
         "order2150_x2": "x.2 Bf",
-        "order2150_text4": "mit Bezug auf BÜ ab",
+        "order2150_text4": "betreffend Bahnübergang bei km",
         "order2150_x3": "x.3 km",
         "order2150_text5": "ist fehlerhaft. Plangeschwindigkeit einhalten.",
 
-        "order2155_text1": "Gestörte SHP-Teile",
-        "order2155_text2": "am Bf/Strecke",
+        "order2155_text1": "Defektes SHP-Gerät",
+        "order2155_text2": "an Posten/Strecke",
         "order2155_x1": "x.1 Bf",
         "order2155_text3": "|",
         "order2155_x2": "x.2 Bf",
@@ -134,7 +134,7 @@
         "order2160_x3": "x.3 Bf",
         "order2160_text5": "Strecke",
         "order2160_x4": "x.4 Strecke",
-        "order2160_text6": "mit dem V-soll",
+        "order2160_text6": "mit einer Geschwindigkeit von",
         "order2160_x5": "x.5 km/h",
 
         "order2165_text1": "Mit gesenkten Bügeln fahren",
@@ -210,11 +210,11 @@
         "order2310_x16": "x.16 km/h",
         "order2310_x17": "x.17 km",
         "order2310_x18": "x.18 km",
-        "order2310_x95": "x.95 Grund",
-        "order2310_x96": "x.96 Grund",
-        "order2310_x97": "x.97 Grund",
+        "order2310_x91": "x.91 Grund",
+        "order2310_x92": "x.92 Grund",
+        "order2310_x93": "x.93 Grund",
 
-        "order2311_text1": "Warnsignal geben",
+        "order2311_text1": "Warnsignal Rp1 geben",
 
         "order2320_x96": "x.96 Andere",
 
@@ -223,7 +223,7 @@
         "orderFooter_Y": "Zeit",
         "orderFooter_Z": "Befehl ID",
         "orderFooter_TimeBtn": "⏰ Akt. Uhrzeit wählen",
-        "orderFooter_NumBtn": "🎲 Zufällige nr. generieren"
+        "orderFooter_NumBtn": "🎲 Zufällige Nr. generieren"
     },
 
     "results": {
@@ -236,7 +236,7 @@
 
     "przetwarzator": {
         "noCheckedCheckboxError": "Um das Feld zu bearbeiten, wähle die entsprechende Anweisung aus!",
-        "headerError": "Fülle alle Kopfzeilerfelder aus!",
+        "headerError": "Fülle alle Kopfzeilenfelder aus!",
         "fillAllFieldsError": "Belege alle benötigten Infos der Anweisung ",
         "emptyOrderError_1": "Leere Befehle werden nicht erstellt!",
         "emptyOrderError_2": "Wähle min. eine Anweisung.",
@@ -253,6 +253,6 @@
         "fillWhole3rdWarningError": "Vervollständige die dritte Warnung der Anweisung 23.10!",
         "fill2310First": "Erstelle erst die Warnungen der Anweisung 23.10!",
         "order2320Error": "Anweisung 23.20 ist leer! Fülle es aus, wenn es ausgewählt ist!",
-        "footerError": "Fülle erst alle Fußzeilenfelder!"
+        "footerError": "Fülle erst alle Fußzeilenfelder aus!"
     }
 }

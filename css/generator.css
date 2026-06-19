@@ -121,7 +121,7 @@ td.check label, td.check99 label {
     color: #0000ff;
     font-weight: bold;
     height: 0.75em;
-    width: 9em;
+    width: 8em;
     border: none;                  
     border-bottom: 2px dotted #000;
     outline: none;
@@ -353,7 +353,7 @@ td input#textbox2310_x3, td input#textbox2310_x4, td input#textbox2310_x5,  td i
     width: 4em;
 }
 
-td input#textbox2310_x95, td input#textbox2310_x96, td input#textbox2310_x97 {
+td input#textbox2310_x91, td input#textbox2310_x92, td input#textbox2310_x93 {
     width: 21em;
 }
 
