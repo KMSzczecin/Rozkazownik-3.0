@@ -166,14 +166,14 @@
 
         "order2181_text1": "Gesperrtes Gleis ohne Fahrzeuge.",
 
-        "order2182_text1": "Arbeiten auf dem Gleis von ZN",
+        "order2182_text1": "Zug",
         "order2182_x1": "x.1 Zugnummer",
-        "order2182_text2": "bei km",
+        "order2182_text2": "arbeitet am Gleis bei km",
         "order2182_x2": "x.2 km",
 
-        "order2183_text1": "Weiterfahrt auf das Gleis für ZN",
+        "order2183_text1": "Auf das Gleis wird Zug",
         "order2183_x1": "x.1 Zugnummer",
-        "order2183_text2": "bis km",
+        "order2183_text2": "geschickt zu km",
         "order2183_x2": "x.2 km",
 
         "order2185_text1": "Aufstellen des Zweiwegefahrzeugs erlaubt",
@@ -235,17 +235,17 @@
     },
 
     "przetwarzator": {
-        "noCheckedCheckboxError": "Um das Feld zu bearbeiten, wähle die entsprechende Anweisung aus!",
+        "noCheckedCheckboxError": "Um das Feld zu bearbeiten, wähle zuerst die entsprechende Anweisung aus!",
         "headerError": "Fülle alle Kopfzeilenfelder aus!",
-        "fillAllFieldsError": "Belege alle benötigten Infos der Anweisung ",
+        "fillAllFieldsError": "Es werden zusätzliche Informationen für die folgende Anweisung benötigt: ",
         "emptyOrderError_1": "Leere Befehle werden nicht erstellt!",
         "emptyOrderError_2": "Wähle min. eine Anweisung.",
         "order22Error": "Anweisung 22 kann nur erstellt werden, when der Befehl Anweisungen 21.10, 21.15 or 21.35 beinhaltet!",
         "order99Error": "Anweisung 99 kann nicht mit einer anderen Anweisung erstellt werden!",
-        "orders2110_2115Error_1": "Das erstellen eines Befehls kann nicht für die Ein- und Ausfahrt erstellt werden!",
+        "orders2110_2115Error_1": "Du kannst keinen Befehl erstellen, welcher gleichzeitig für die Ein- und Ausfahrt gültig ist!",
         "orders2110_2115Error_2": "Erstelle zwei seperate Befehle.",
         "orders2181_2182Error": "Das Gleis hat keine Fahrzeuge, aber ein Zug arbeitet dort? Wähle eine Anweisung - 21.81 oder 21.82!",
-        "needs2180Error": "Anweisung 21.81 und 21.82 könn nur erstellt werden, wenn der Befehl die Anweisung 21.80 enthält!",
+        "needs2180Error": "Anweisung 21.81 und 21.82 können nur erstellt werden, wenn der Befehl die Anweisung 21.80 enthält!",
         "fill1stWarningError": "Fülle erst die erste Warunung!",
         "fill2ndWarningError": "Fülle erst die zweite Warnung!",
         "fillWhole1stWarningError": "Vervollständige die erste Warnung der Anweisung 23.10!",

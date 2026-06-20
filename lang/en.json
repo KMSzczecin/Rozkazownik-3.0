@@ -243,7 +243,7 @@
         "order22Error": "Instruction 22 can only be issued if the order also contains instruction 21.10, 21.15 or 21.35!",
         "order99Error": "Instruction 99 cannot be issued together with any other instruction!",
         "orders2110_2115Error_1": "You cannot issue an order for both train departure and entry at the same time!",
-        "orders2110_2115Error_2": "Create two separate orders.",
+        "orders2110_2115Error_2": "Issue two separate orders.",
         "orders2181_2182Error": "The track is free of rolling stock, but a train is operating on it? Choose only one instruction - 21.81 or 21.82!",
         "needs2180Error": "Instructions 21.81 and 21.82 can only be issued if the order also contains instruction 21.80!",
         "fill1stWarningError": "Fill in the first warning first!",
