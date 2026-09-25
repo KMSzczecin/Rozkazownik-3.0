@@ -232,7 +232,7 @@ async function openChangelog() {
 // ======================
 
 const secret = "bojek";
-const secret2 = "babisz"
+const secret2 = "bejbiszek"
 let typed = "";
 
 // funkcja pokazująca obrazek
