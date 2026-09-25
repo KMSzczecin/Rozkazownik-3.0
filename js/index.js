@@ -232,6 +232,7 @@ async function openChangelog() {
 // ======================
 
 const secret = "bojek";
+const secret2 = "babisz"
 let typed = "";
 
 // funkcja pokazująca obrazek
@@ -239,12 +240,25 @@ function showBojek() {
     customAlert("<img src='media/img/bojek.png' style='max-height: 60vh; max-width: 360px';>", "changelog");
 }
 
+// funkcja pokazująca obrazek 2
+function showBabol() {
+    customAlert("<img src='media/img/babol.jpg' style='max-height: 60vh; max-width: 360px';>", "changelog");
+}
+
 // sprawdzenie wpisanych znaków
 function checkTyped(key) {
     typed += key.toLowerCase();
-    if (typed.length > secret.length) typed = typed.slice(-secret.length);
-    if (typed === secret) {
+
+    const maxLength = Math.max(secret.length, secret2.length);
+    if (typed.length > maxLength) {
+        typed = typed.slice(-maxLength);
+    }
+
+    if (typed.endsWith(secret)) {
         showBojek();
+        typed = "";
+    } else if (typed.endsWith(secret2)) {
+        showBabol();
         typed = "";
     }
 }
